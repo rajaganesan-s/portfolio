@@ -394,6 +394,45 @@ ul {
     background: #27c93f;
 }
 
+.profile-content-wrapper {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.profile-image {
+    width: 100%;
+    max-height: 350px;
+    /* Limit height to prevent overly tall card */
+    height: auto;
+    object-fit: cover;
+    object-position: center top;
+    border-radius: 12px;
+    display: block;
+}
+
+/* Stack the code snippet below the image */
+.code-overlay {
+    position: relative;
+    bottom: auto;
+    right: auto;
+    left: auto;
+    width: auto;
+
+    margin-top: 20px;
+    background: rgba(15, 23, 42, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 20px;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    z-index: 10;
+}
+
+.profile-card-tilt:hover .code-overlay {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.7);
+}
 
 /* Bento Grid System for About */
 .section-title {
@@ -713,6 +752,17 @@ ul {
 
 .contact-info {
     padding-top: 40px;
+}
+
+.contact-avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
+    border: 3px solid var(--primary);
+    box-shadow: 0 0 20px rgba(139, 92, 246, 0.4);
+    display: block;
 }
 
 .info-header h3 {

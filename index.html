@@ -77,23 +77,23 @@
                 </div>
                 <div class="hero-visual">
                     <div class="glass-card profile-card-tilt">
-                        <div class="code-snippet">
-                            <div class="window-controls">
-                                <span></span><span></span><span></span>
+                        <div class="profile-content-wrapper">
+                            <img src="Image1.png" alt="Rajaganesan Subramani" class="profile-image">
+                            <div class="code-snippet code-overlay">
+                                <div class="window-controls">
+                                    <span></span><span></span><span></span>
+                                </div>
+                                <pre><code>// Developer Profile
+val profile = Developer(
+    name = "Rajaganesan Subramani",
+    role = "Android & Vehicle Diagnostics",
+    stack = listOf(
+        "Kotlin", "Java", "Flutter",
+        "Jetpack Compose", "CAN/K-Line"
+    ),
+    experience = "3+ Years"
+)</code></pre>
                             </div>
-                            <pre><code>// Vehicle Connection
-fun connectToVehicle(ecu: ECU) {
-  val protocol = when(ecu.type) {
-    Type.EMS -> Protocol.CAN
-    Type.ABS -> Protocol.KLINE
-    Type.EV  -> Protocol.CAN_FD
-  }
-  
-  hardware.connect(protocol)
-    .onSuccess { data ->
-       analyze(data)
-    }
-}</code></pre>
                         </div>
                     </div>
                 </div>
