@@ -28,12 +28,15 @@
 html {
     scroll-behavior: smooth;
     font-size: 16px;
+    background-color: var(--bg-color);
+    /* Prevent white flash */
 }
 
 body {
     font-family: 'Outfit', sans-serif;
     /* Background moved to handled by .developer-bg-container */
-    background: transparent;
+    background-color: var(--bg-color);
+    /* Fallback background */
     color: var(--text-primary);
     line-height: 1.6;
     overflow-x: hidden;
@@ -913,11 +916,21 @@ ul {
         margin: 0 auto;
     }
 
+    .profile-card-tilt {
+        transform: none;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+        margin-bottom: 50px;
+    }
+
     .hero-description {
         margin: 0 auto 30px;
     }
 
     .hero-buttons {
+        justify-content: center;
+    }
+
+    .typing-container {
         justify-content: center;
     }
 
@@ -956,6 +969,13 @@ ul {
 
     .hero-name {
         font-size: 3.5rem;
+    }
+
+    .hero-visual {
+        max-width: 320px;
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     .project-visual {
