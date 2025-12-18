@@ -1020,11 +1020,45 @@ ul {
     .bento-grid {
         display: flex;
         flex-direction: column;
+        gap: 20px;
+        /* Explicit gap for flex column */
+    }
+
+    .bento-item {
+        min-height: 220px;
+        /* Ensure absolute items have height */
+    }
+
+    /* Specific fix for location card availability text */
+    .bento-location {
+        min-height: 250px;
     }
 
     .timeline-grid {
         grid-template-columns: 1fr;
-        gap: 50px;
+        gap: 30px;
+        /* Reduced gap from 50px */
+    }
+
+    .timeline-column {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        /* Center the column title and cards */
+        width: 100%;
+    }
+
+    .timeline-card {
+        margin-bottom: 20px;
+        /* Better spacing */
+        text-align: center;
+        /* Center text */
+        width: 100%;
+    }
+
+    .timeline-school {
+        justify-content: center;
+        /* Center flex content inside */
     }
 
     .project-row {
