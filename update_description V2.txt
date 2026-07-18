@@ -1,0 +1,88 @@
+# Rajaganesan S
+**Senior Software Engineer | Automotive Diagnostics Specialist**
+
+*   **Email:** rajaganesansubramani@gmail.com
+*   **LinkedIn:** [linkedin.com/in/rajaganesan](https://linkedin.com/in/rajaganesan)
+*   **Location:** TIDEL Park, Salem, Tamil Nadu, India
+
+---
+
+## 📝 Professional Summary
+Results-driven **Senior Software Engineer** with **3+ years** of experience in developing advanced vehicle diagnostics applications for multiple ECUs in the automotive domain. Specialized in UDS (Unified Diagnostic Services), OBD-II diagnostics, CAN, and K-Line communication protocols. Proven expertise in ECU flashing, DTC management, routine controls, and cross-platform diagnostic solutions for Android and iOS.
+
+Experienced in delivering robust dealer-level diagnostic applications used by technicians to identify, diagnose, and resolve vehicle issues across two-wheelers, three-wheelers, and electric vehicles. Strong knowledge of OEM-specific flashing workflows and multi-brand ECU integration.
+
+---
+
+## 🎯 Career Focus & Objective
+To leverage my expertise in automotive diagnostics, ECU communication, and cross-platform application development to build innovative diagnostic solutions, contribute to next-generation connected vehicle technologies, and deliver high-quality software for global automotive platforms.
+
+---
+
+## 🛠️ Core Technical Skills
+
+### 1. Programming Languages
+*   **Kotlin** (Primary - Native Android)
+*   **Java** (Primary - Native Android)
+*   **Flutter & Dart** (Cross-platform Android & iOS)
+
+### 2. Diagnostics & Protocols
+*   **UDS (ISO 14229)** - *Expert*
+*   **OBD-II** - *Expert*
+*   **CAN Bus** - *Expert*
+*   **K-Line** - *Intermediate*
+*   **DTC Parsing & Management** - *Expert*
+*   **ECU Flashing Integration** - *Expert*
+
+### 3. Tools, Platforms & Frameworks
+*   **CAN Bus Tools:** PCAN Viewer / PCAN View
+*   **Connectivity:** Bluetooth Classic, BLE, Wi-Fi, USB communication (Serial OTG)
+*   **Methodologies:** Remote Diagnostics, Firmware Validation, VCI Firmware Testing
+*   **AI Development Tools:** Antigravity, Gemini, Claude, GitHub Copilot, OpenAI Codex, Open Code
+
+---
+
+## 💼 Professional Experience
+
+### Senior Software Engineer
+**Tamilzorous Pvt Ltd, TIDEL Park, Salem** | *May 2023 – Present*
+*   **Dealer Diagnostics Development:** Develop dealer-level diagnostics applications for multiple OEMs and ECU platforms.
+*   **Protocol Implementation:** Integrate UDS and OBD-II diagnostic services including Read/Write PID/DID data, DTC handling, Routine Controls, and Actuator/IO overrides.
+*   **ECU Flashing Integration:** Implement robust ECU flashing workflows and bootloader sequences for Bosch, Sedemac, Continental, Pricol, and other ECU vendors.
+*   **ECU Support Range:** Handle EMS, ABS, Cluster, ISG, Keyless, VCU, iVCU, LCM, MCU, and BMS controllers.
+*   **Firmware Testing:** Perform firmware validation and communication testing using PCAN Viewer and VCI tools.
+*   **Timely Delivery:** Consistently deliver robust and stable applications within committed timelines.
+
+---
+
+## 🚀 Key Projects
+
+### 1. Major Native Android Projects (Java & Kotlin)
+*   **TVS RIDEScan 2.0**
+*   **TVS RIDEScan 3W**
+*   **TVS RIDEScan IB**
+*   **TVS RIDEScan Europe**
+*   **TVS eRIDEScan 2W** (EV specific)
+*   **BMW K01 India**
+*   **BMW K01 China**
+*   *Description:* Enterprise applications used by authorized dealer technicians globally to scan trouble codes, clear DTCs, execute ECU flashing, and validate vehicle repairs.
+
+### 2. Cross-Platform Diagnostics (Flutter)
+*   **Service & Master PRO Applications:** Developed cross-platform client diagnostics applications for Android and iOS devices.
+*   **Supported Vehicle Brands:** TVS, Honda, Ather, Ola, Hero, BMW, Royal Enfield, Bajaj.
+*   **Features Implemented:** Generic UDS diagnostics, OBD-II standard services, multi-brand protocol handlers, and cross-platform BLE/USB VCI bridge.
+
+### 3. VCI Management & Remote Diagnostics
+*   **Communication Bridge:** Designed and maintained communication systems for vehicle communication interfaces (VCIs) supporting Bluetooth, BLE, Wi-Fi, and USB.
+*   **Remote Diagnostics:** Successfully contributed to remote diagnostics, enabling the customer support team to access the technician's mobile device to perform testing and ECU flashing from anywhere.
+
+---
+
+## 🏆 Key Achievements & Production Impact
+*   Successfully delivered multiple production-grade diagnostic applications for TVS and BMW platforms.
+*   Integrated OEM-specific flashing flows across more than **5+ ECU brands**.
+*   Created the OBD2B EMS new flashing sequece to access the address based flashing sequence accross multi variant.
+*   Implemented reliable DTC parsing and clearing mechanisms for dealer service operations.
+*   Supported electric vehicle ECU diagnostics, including BMS, MCU, VCU, and iVCU systems.
+*   Improved firmware testing and flashing validation processes through structured communication analysis.
+*   Consistently delivered robust and stable applications within committed timelines.

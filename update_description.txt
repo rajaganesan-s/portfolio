@@ -1,0 +1,23 @@
+NAME : RAJAGANESAN S
+Current Role : Senior Software Engineer.
+Description : Developing the vehicle diagnostics application for TVS over multiple ECUs. UDS and OBD II (CAN & KLINE).
+Experience : 3+ Years 2023 May - Present
+Company : Tamilzorous Pvt Ltd, Tidel Park Salem.
+
+Native : JAVA, KOTLIN for TVS RIDEScan 2.0, RIDEScan 3W, RIDEScan IB, RIDEScan Europe, eRIDEScan 2W, BMW k01 INDIA & CHINA. This applications the dealer levet technicians will use to diagnose the vehicle and fixing the issues like DTC and Flashing.
+
+Specs : Read & Write data, DTC Read and Parsing then Clear dtcs, Routine and IO Controls, ECU Flashing over multiple brand ECUs like BOSCH, SEDEMAC, CONTINENAL, Pricol,... above 8 brands and ECU type like EMS, ABS, CLUSTER, ISG, KEYLESS ECUs. For electril VCU, iVCU, LCM, MCU, BMS....
+
+Cross Platform : Flutter for Android & IOS to create Service and Master PRO applicaitons. To diagnostics basic things generic standred. OBD II & UDS.for Drvie X company to diagnose the multi brand vehicles like, TVS, Honda, Ather, Ola, Hero, BMW, Royal Enfield, Bajaj....
+
+VCI Management : Cross functional tool handling the communication through different mediums BT, BLE, WIFI and USB.
+
+Achieve the Remote diagnostics to perform testing and flashing.
+
+Strong knowlege about diagnostics UDS & OBD II Commands, CAN & KLINE Protocol (Intermediate), Flashing flow integration.
+
+Robust application on time delivery. Firmware test performance. Flashing integration for multiple ECUs across multiple brands based on OEM specific flashing flow.
+
+Additional : Analyze the flow using PCAN Viewer, VCI Firmware test support.
+
+Known AI : Antigravity, Gemini, Claude, Github Copilot, Codex, Open Code....
