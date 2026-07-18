@@ -147,7 +147,7 @@ document.addEventListener('DOMContentLoaded', () => {
             "a Vehicle Diagnostics Specialist (UDS & OBD-II)",
             "an Android & Kotlin Specialist",
             "a Flutter Cross-Platform Developer",
-            "an ECU Flashing & FOTA Engineer"
+            "an ECU Flashing & Diagnostics Engineer"
         ];
         let wordIndex = 0;
         let charIndex = 0;
@@ -419,14 +419,18 @@ document.addEventListener('DOMContentLoaded', () => {
         logToConsole(`Positive Response received from ECU address $10. Status: Session Active.`, 'ecu-in');
         
         // Update Smartphone Screen Mockup
-        if (phoneStatusIndicator) {
-            phoneStatusIndicator.className = 'status-indicator online';
+        const statusInd = phoneStatusIndicator || document.getElementById('phoneStatusIndicator');
+        const statusTxt = phoneStatusText || document.getElementById('phoneStatusText');
+        const ioBtn = phoneIoBtn || document.getElementById('phoneIoBtn');
+
+        if (statusInd) {
+            statusInd.className = 'status-indicator online';
         }
-        if (phoneStatusText) {
-            phoneStatusText.textContent = 'VCI Connected';
+        if (statusTxt) {
+            statusTxt.textContent = 'VCI Connected';
         }
-        if (phoneIoBtn) {
-            phoneIoBtn.disabled = false;
+        if (ioBtn) {
+            ioBtn.disabled = false;
         }
 
         // Enable diagnostic actions
@@ -455,29 +459,36 @@ document.addEventListener('DOMContentLoaded', () => {
         logToConsole(`VCI interface disconnected. Protocol session closed.`, 'system');
         
         // Reset phone mockup UI
-        if (phoneStatusIndicator) {
-            phoneStatusIndicator.className = 'status-indicator';
+        const statusInd = phoneStatusIndicator || document.getElementById('phoneStatusIndicator');
+        const statusTxt = phoneStatusText || document.getElementById('phoneStatusText');
+        const ioBtn = phoneIoBtn || document.getElementById('phoneIoBtn');
+        const ioStatus = phoneIoStatus || document.getElementById('phoneIoStatus');
+        const fStatus = phoneFotaStatus || document.getElementById('phoneFotaStatus');
+        const progressBg = phoneProgressBg || document.getElementById('phoneProgressBg');
+
+        if (statusInd) {
+            statusInd.className = 'status-indicator';
         }
-        if (phoneStatusText) {
-            phoneStatusText.textContent = 'VCI Offline';
+        if (statusTxt) {
+            statusTxt.textContent = 'VCI Offline';
         }
-        if (phoneIoBtn) {
-            phoneIoBtn.disabled = true;
+        if (ioBtn) {
+            ioBtn.disabled = true;
         }
-        if (phoneIoStatus) {
-            phoneIoStatus.className = 'phone-io-status idle';
-            phoneIoStatus.textContent = 'IO State: Inactive';
+        if (ioStatus) {
+            ioStatus.className = 'phone-io-status idle';
+            ioStatus.textContent = 'IO State: Inactive';
         }
         if (phoneRpm) phoneRpm.textContent = '0 RPM';
         if (phoneVolt) phoneVolt.textContent = '0.0V';
         if (phoneDtcList) {
             phoneDtcList.innerHTML = `<div class="mini-dtc none">No active diagnostic faults</div>`;
         }
-        if (phoneFotaStatus) {
-            phoneFotaStatus.textContent = 'FOTA Idle';
+        if (fStatus) {
+            fStatus.textContent = 'Flash Idle';
         }
-        if (phoneProgressBg) {
-            phoneProgressBg.classList.add('hidden');
+        if (progressBg) {
+            progressBg.classList.add('hidden');
         }
         
         // Reset mini chart bar heights
@@ -825,15 +836,15 @@ document.addEventListener('DOMContentLoaded', () => {
             if (termTab) termTab.click();
             
             const firmwareFiles = {
-                tvs_uds: 'TVS_RIDEScan_EMS_v3.0.4.bin',
-                bmw_k01: 'BMW_ABS_K01_v1.2.9.bin',
-                drivex_obd: 'DRIVEX_UNIVERSAL_OBD_v2.1.0.bin',
-                ev_vcu: 'EV_VCU_BMS_COMBO_v4.5.1.bin'
+                tvs_uds: 'TVS_RIDEScan_EMS_v3.0.4.hex',
+                bmw_k01: 'BMW_ABS_K01_v1.2.9.hex',
+                drivex_obd: 'DRIVEX_UNIVERSAL_OBD_v2.1.0.hex',
+                ev_vcu: 'EV_VCU_BMS_COMBO_v4.5.1.hex'
             };
             
-            const selectedFirmware = firmwareFiles[selectedEcu] || 'GENERIC_ECU_FIRMWARE.bin';
+            const selectedFirmware = firmwareFiles[selectedEcu] || 'GENERIC_ECU_FIRMWARE.hex';
             
-            if (!confirm(`Are you sure you want to perform firmware flashing?\nTarget ECU: ${getEcuName(selectedEcu)}\nBinary: ${selectedFirmware}\nWARNING: Do not disconnect interface power during this process!`)) {
+            if (!confirm(`Are you sure you want to perform firmware flashing?\nTarget ECU: ${getEcuName(selectedEcu)}\nFile: ${selectedFirmware}\nWARNING: Do not disconnect interface power during this process!`)) {
                 return;
             }
             
@@ -853,12 +864,16 @@ document.addEventListener('DOMContentLoaded', () => {
         flashStatusLabel.textContent = `Flashing ${filename}: 0%`;
 
         // Update Phone Mockup elements
-        if (phoneProgressBg) phoneProgressBg.classList.remove('hidden');
-        if (phoneProgressBar) phoneProgressBar.style.width = '0%';
-        if (phoneFotaStatus) phoneFotaStatus.textContent = 'FOTA: 0%';
+        const progressBg = phoneProgressBg || document.getElementById('phoneProgressBg');
+        const progressProgress = phoneProgressBar || document.getElementById('phoneProgressBar');
+        const fotaStat = phoneFotaStatus || document.getElementById('phoneFotaStatus');
+
+        if (progressBg) progressBg.classList.remove('hidden');
+        if (progressProgress) progressProgress.style.width = '0%';
+        if (fotaStat) fotaStat.textContent = 'Flash: 0%';
         
-        logToConsole(`*** START FIRMWARE FLASHING PIPELINE ***`, 'info');
-        logToConsole(`Firmware Target file: ${filename}`, 'info');
+        logToConsole(`*** START EMS FLASHING PIPELINE ***`, 'info');
+        logToConsole(`EMS Target file: ${filename}`, 'info');
         logToConsole(`Entering UDS Diagnostic Session $03 (Programming Session)...`, 'vci-out');
         
         let step = 0;
@@ -883,7 +898,7 @@ document.addEventListener('DOMContentLoaded', () => {
             { pct: 98, msg: `Sending Service $11 $01 (Hard Reset ECU)...`, type: 'vci-out' },
             { pct: 100, msg: `ECU Reset completed. Rebooting in Normal operation mode.`, type: 'ecu-in' }
         ];
-
+ 
         let idx = 0;
         const flashInterval = setInterval(() => {
             if (idx < steps.length) {
@@ -893,8 +908,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 flashTimeLabel.textContent = `Est: ${Math.floor((100 - current.pct) * 0.1)}s`;
                 
                 // Update Phone Progress UI
-                if (phoneProgressBar) phoneProgressBar.style.width = `${current.pct}%`;
-                if (phoneFotaStatus) phoneFotaStatus.textContent = `FOTA: ${current.pct}%`;
+                const progressProgressCurrent = phoneProgressBar || document.getElementById('phoneProgressBar');
+                const fotaStatCurrent = phoneFotaStatus || document.getElementById('phoneFotaStatus');
+                if (progressProgressCurrent) progressProgressCurrent.style.width = `${current.pct}%`;
+                if (fotaStatCurrent) fotaStatCurrent.textContent = `Flash: ${current.pct}%`;
                 
                 logToConsole(current.msg, current.type);
                 idx++;
@@ -904,12 +921,14 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }, 400);
     }
-
+ 
     function finishFlashing() {
         flashProgressContainer.classList.add('hidden');
-        if (phoneProgressBg) phoneProgressBg.classList.add('hidden');
-        if (phoneFotaStatus) phoneFotaStatus.textContent = 'FOTA Complete';
-        logToConsole(`*** FOTA ECU FLASHING COMPLETED SUCCESSFULLY ***`, 'info');
+        const progressBg = phoneProgressBg || document.getElementById('phoneProgressBg');
+        const fotaStat = phoneFotaStatus || document.getElementById('phoneFotaStatus');
+        if (progressBg) progressBg.classList.add('hidden');
+        if (fotaStat) fotaStat.textContent = 'Flash Complete';
+        logToConsole(`*** EMS ECU FLASHING COMPLETED SUCCESSFULLY ***`, 'info');
         
         isCanStreamPaused = false;
         connectVciBtn.disabled = false;
@@ -1240,6 +1259,31 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             }
         }, 1800);
+
+        // Screen 4: EMS Flashing Progress Showcase Loop (idle mode)
+        const loopBg = document.getElementById('phoneProgressBg');
+        const loopBar = document.getElementById('phoneProgressBar');
+        const loopStatus = document.getElementById('phoneFotaStatus');
+        let loopPct = 0;
+
+        setInterval(() => {
+            if (!isVciConnected) {
+                if (loopBg && loopBg.classList.contains('hidden')) {
+                    loopBg.classList.remove('hidden');
+                }
+                loopPct += 4;
+                if (loopPct > 100) {
+                    loopPct = 0;
+                }
+                
+                if (loopBar) {
+                    loopBar.style.width = `${loopPct}%`;
+                }
+                if (loopStatus) {
+                    loopStatus.textContent = `Flash: ${loopPct}%`;
+                }
+            }
+        }, 200);
     }
 
     initShowcaseAnimations();

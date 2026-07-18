@@ -77,7 +77,7 @@
                     </p>
                     
                     <div class="hero-buttons">
-                        <a href="#diagnostics" class="btn btn-primary"><i class="fa-solid fa-terminal"></i> Try Diagnostic Console</a>
+                        <a href="#mobile-showcase" class="btn btn-primary"><i class="fa-solid fa-mobile-screen-button"></i> View Diagnostics App</a>
                         <a href="#projects" class="btn btn-outline">View Projects</a>
                     </div>
 
@@ -107,7 +107,6 @@ object Rajaganesan_S {
     const val experience = "3+ Years"
     const val company = "Tamilzorous Pvt Ltd"
     const val location = "TIDEL Park, Salem, Tamil Nadu, India"
-    const val profileImage = "Image2.png"
     val protocols = listOf("UDS", "OBD-II", "CAN", "K-Line")
     val flashing = listOf("Bosch", "Sedemac", "Continental", "Pricol")
     val evSystems = listOf("VCU", "BMS", "MCU", "iVCU", "LCM")
@@ -380,8 +379,8 @@ object Rajaganesan_S {
                                     <span class="app-logo"><i class="fa-solid fa-sliders text-cyan"></i> Actuator Test</span>
                                 </div>
                                 <div class="app-body">
-                                    <div class="vci-connection-status connected-static">
-                                        <span class="status-indicator online"></span> <span>IO Override Mode Active</span>
+                                    <div class="vci-connection-status">
+                                        <span id="phoneStatusIndicator" class="status-indicator"></span> <span id="phoneStatusText">VCI Offline</span>
                                     </div>
 
                                     <!-- IO Control Override Status -->
@@ -389,6 +388,17 @@ object Rajaganesan_S {
                                         <div class="feature-header">
                                             <span><i class="fa-solid fa-microchip text-cyan"></i> Command Status</span>
                                             <span class="feature-val text-emerald">UDS Service $2F</span>
+                                        </div>
+                                    </div>
+
+                                    <!-- EMS Flashing Progress -->
+                                    <div id="phoneProgressBg" class="phone-feature-card bg-glow-rose hidden">
+                                        <div class="feature-header">
+                                            <span class="text-rose"><i class="fa-solid fa-microchip"></i> EMS Flashing</span>
+                                            <span id="phoneFotaStatus" class="app-fota-status">Flash Idle</span>
+                                        </div>
+                                        <div class="phone-progress-bar-bg mt-10">
+                                            <div id="phoneProgressBar" class="phone-progress-bar"></div>
                                         </div>
                                     </div>
 
@@ -413,8 +423,8 @@ object Rajaganesan_S {
                                     </div>
 
                                     <div class="phone-io-block mt-auto">
-                                        <button class="app-action-btn btn-active-override" disabled><i class="fa-solid fa-sliders"></i> IO Overrides Active</button>
-                                        <div class="phone-io-status active animate-status-glow">IO Control: ACTIVE</div>
+                                        <button id="phoneIoBtn" class="app-action-btn btn-active-override" disabled><i class="fa-solid fa-sliders"></i> IO Overrides Active</button>
+                                        <div id="phoneIoStatus" class="phone-io-status idle">IO State: Inactive</div>
                                     </div>
                                 </div>
                             </div>
@@ -428,7 +438,7 @@ object Rajaganesan_S {
         <section id="diagnostics" class="section diagnostics-section">
             <div class="container">
                 <h2 class="section-title">Diagnostics Console</h2>
-                <p class="section-subtitle">Experience real-world UDS and OBD-II diagnostics. Select a connection medium, select a target ECU controller, and trigger UDS scan routines or FOTA flashing sequences below.</p>
+                <p class="section-subtitle">Experience real-world UDS and OBD-II diagnostics. Select a connection medium, select a target ECU controller, and trigger UDS scan routines or ECU flashing sequences below.</p>
                 
                 <div class="diagnostics-panel glass-card">
                     <!-- Left Sidebar: Controls -->
@@ -467,7 +477,7 @@ object Rajaganesan_S {
                                 <button id="readDtcBtn" class="action-btn" disabled><i class="fa-solid fa-bug"></i> Read DTCs</button>
                                 <button id="clearDtcBtn" class="action-btn" disabled><i class="fa-solid fa-trash-can"></i> Clear DTCs</button>
                                 <button id="liveDataBtn" class="action-btn" disabled><i class="fa-solid fa-gauge"></i> Live Telemetry</button>
-                                <button id="flashEcuBtn" class="action-btn flash" disabled><i class="fa-solid fa-download"></i> ECU FOTA Flash</button>
+                                <button id="flashEcuBtn" class="action-btn flash" disabled><i class="fa-solid fa-download"></i> ECU Flash</button>
                             </div>
                         </div>
                     </div>
@@ -872,7 +882,7 @@ object Rajaganesan_S {
                             </div>
                         </div>
                         <div class="project-content">
-                            <span class="project-subtitle">Remote Testing & FOTA Platform</span>
+                            <span class="project-subtitle">Remote Testing & Flashing Platform</span>
                             <h3>Remote Diagnostics & PCAN Integration</h3>
                             <p>
                                 Enabling engineers to perform firmware validation and testing without physical interaction. Uses PCAN Viewer and wireless bridging to execute secure flashing cycles.
