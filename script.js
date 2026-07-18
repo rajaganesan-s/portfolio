@@ -659,6 +659,24 @@ document.addEventListener('DOMContentLoaded', () => {
             if (phoneRpm) phoneRpm.textContent = rpm + ' RPM';
             if (phoneVolt) phoneVolt.textContent = voltage.toFixed(1) + 'V';
             
+            const phoneTemp = document.getElementById('phoneTemp');
+            const phoneTps = document.getElementById('phoneTps');
+            const phoneSpeed = document.getElementById('phoneSpeed');
+            
+            let tempVal = 0, tpsVal = 0, speedVal = 0;
+            if (selectedEcu === 'ev_vcu') {
+                tempVal = Math.floor(45 + Math.sin(counter * 0.1) * 3 + Math.random() * 0.5);
+                tpsVal = Math.max(0, Math.floor(25 + Math.sin(counter * 0.8) * 10));
+                speedVal = Math.min(120, Math.floor(rpm / 50));
+            } else {
+                tempVal = Math.floor(88 + Math.sin(counter * 0.05) * 2 + Math.random() * 0.5);
+                tpsVal = Math.max(0, Math.floor(18 + Math.sin(counter * 0.6) * 5));
+                speedVal = Math.floor(rpm / 60);
+            }
+            if (phoneTemp) phoneTemp.textContent = tempVal + '°C';
+            if (phoneTps) phoneTps.textContent = tpsVal + '%';
+            if (phoneSpeed) phoneSpeed.textContent = speedVal + ' km/h';
+            
             // Bouncing mini chart bars on phone
             for (let i = 1; i <= 10; i++) {
                 const bar = document.getElementById(`mbar${i}`);
@@ -687,6 +705,15 @@ document.addEventListener('DOMContentLoaded', () => {
         actionButtons.liveData.style.borderColor = '';
         actionButtons.liveData.style.background = '';
         actionButtons.liveData.style.color = '';
+        
+        const phoneTemp = document.getElementById('phoneTemp');
+        const phoneTps = document.getElementById('phoneTps');
+        const phoneSpeed = document.getElementById('phoneSpeed');
+        if (phoneRpm) phoneRpm.textContent = '0 RPM';
+        if (phoneVolt) phoneVolt.textContent = '0.0V';
+        if (phoneTemp) phoneTemp.textContent = '0°C';
+        if (phoneTps) phoneTps.textContent = '0%';
+        if (phoneSpeed) phoneSpeed.textContent = '0 km/h';
         
         // Remove phone active bars
         for (let i = 1; i <= 10; i++) {
@@ -1108,4 +1135,112 @@ document.addEventListener('DOMContentLoaded', () => {
             }, 1500);
         });
     }
+
+    // ==========================================
+    // 7. DIAGNOSTICS SHOWCASE ANIMATION TICKER
+    // ==========================================
+    function initShowcaseAnimations() {
+        // Screen 1: Brand cycle (TVS, Ather, BMW, Honda, Hero, Bajaj, Ola)
+        const logos = document.querySelectorAll('.brand-logo-cycle i');
+        let activeLogoIdx = 0;
+        if (logos.length > 0) {
+            logos[0].classList.add('logo-active');
+            setInterval(() => {
+                logos[activeLogoIdx].classList.remove('logo-active');
+                activeLogoIdx = (activeLogoIdx + 1) % logos.length;
+                logos[activeLogoIdx].classList.add('logo-active');
+                
+                const statusTxt = document.querySelector('.detect-status-text');
+                if (statusTxt) {
+                    const brands = [
+                        "TVS Motor Protocol...", 
+                        "Ather Energy BLE...", 
+                        "BMW CAN Protocol...", 
+                        "Honda OBD2 Protocol...", 
+                        "Hero MotoCorp CAN...", 
+                        "Bajaj Auto Protocol...", 
+                        "Ola Electric VCU..."
+                    ];
+                    statusTxt.textContent = brands[activeLogoIdx % brands.length];
+                }
+            }, 2000);
+        }
+
+        // Screen 1: VIN Validation Typewriter
+        const vinElement = document.querySelector('.vin-text-cursor');
+        const vinFill = document.querySelector('.vin-progress-fill');
+        const vinString = "MD2A14B50H1094382";
+        let vinCharIdx = 0;
+        if (vinElement) {
+            setInterval(() => {
+                vinCharIdx++;
+                if (vinCharIdx > vinString.length) {
+                    vinCharIdx = 0;
+                    if (vinFill) vinFill.style.width = '0%';
+                }
+                vinElement.textContent = vinString.substring(0, vinCharIdx);
+                if (vinFill) {
+                    vinFill.style.width = (vinCharIdx / vinString.length) * 100 + '%';
+                }
+            }, 150);
+        }
+
+        // Screen 2: Live Parameters Fluctuation
+        const showRpm = document.getElementById('showcaseRpm');
+        const showVolt = document.getElementById('showcaseVolt');
+        const showTemp = document.getElementById('showcaseTemp');
+        const showTps = document.getElementById('showcaseTps');
+        const showSpeed = document.getElementById('showcaseSpeed');
+        let paramCounter = 0;
+
+        if (showRpm) {
+            setInterval(() => {
+                paramCounter += 0.15;
+                const rpmVal = Math.floor(4800 + Math.sin(paramCounter) * 800 + Math.random() * 50);
+                const voltVal = (13.6 + Math.sin(paramCounter * 0.5) * 0.3 + Math.random() * 0.05).toFixed(1);
+                const tempVal = Math.floor(82 + Math.sin(paramCounter * 0.1) * 2);
+                const tpsVal = Math.max(0, Math.floor(22 + Math.sin(paramCounter * 0.8) * 6));
+                const speedVal = Math.floor(rpmVal / 70);
+
+                showRpm.textContent = rpmVal + ' RPM';
+                if (showVolt) showVolt.textContent = voltVal + 'V';
+                if (showTemp) showTemp.textContent = tempVal + '°C';
+                if (showTps) showTps.textContent = tpsVal + '%';
+                if (showSpeed) showSpeed.textContent = speedVal + ' km/h';
+            }, 250);
+        }
+
+        // Screen 4: Actuator & IO Control Toggles Loop
+        const togglePill1 = document.querySelector('.animate-toggle-pill-1');
+        const togglePill2 = document.querySelector('.animate-toggle-pill-2');
+        const togglePill3 = document.querySelector('.animate-toggle-pill-3');
+        const togglePill4 = document.querySelector('.animate-toggle-pill-4');
+        const statusGlow = document.querySelector('.animate-status-glow');
+        let toggleTick = 0;
+        
+        setInterval(() => {
+            toggleTick++;
+            if (toggleTick % 2 === 0) {
+                if (togglePill1) { togglePill1.classList.add('indicator-override-active'); togglePill1.textContent = 'ACTIVE'; }
+                if (togglePill2) { togglePill2.classList.remove('indicator-override-active'); togglePill2.textContent = 'DEFAULT'; }
+                if (togglePill3) { togglePill3.classList.add('indicator-override-active'); togglePill3.textContent = 'ACTIVE'; }
+                if (togglePill4) { togglePill4.classList.remove('indicator-override-active'); togglePill4.textContent = 'DEFAULT'; }
+                if (statusGlow) {
+                    statusGlow.classList.add('indicator-override-active');
+                    statusGlow.textContent = 'IO Control: ACTIVE';
+                }
+            } else {
+                if (togglePill1) { togglePill1.classList.remove('indicator-override-active'); togglePill1.textContent = 'DEFAULT'; }
+                if (togglePill2) { togglePill2.classList.add('indicator-override-active'); togglePill2.textContent = 'ACTIVE'; }
+                if (togglePill3) { togglePill3.classList.remove('indicator-override-active'); togglePill3.textContent = 'DEFAULT'; }
+                if (togglePill4) { togglePill4.classList.add('indicator-override-active'); togglePill4.textContent = 'ACTIVE'; }
+                if (statusGlow) {
+                    statusGlow.classList.add('indicator-override-active');
+                    statusGlow.textContent = 'IO Control: ACTIVE';
+                }
+            }
+        }, 1800);
+    }
+
+    initShowcaseAnimations();
 });

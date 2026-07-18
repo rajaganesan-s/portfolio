@@ -471,7 +471,7 @@ ul {
 .bento-grid {
     display: grid;
     grid-template-columns: 1.8fr 1.1fr 1.1fr;
-    grid-template-rows: 230px 230px 180px;
+    grid-template-rows: 230px 230px;
     gap: 20px;
 }
 
@@ -619,53 +619,7 @@ ul {
     font-size: 0.8rem;
 }
 
-.bento-location {
-    grid-column: 1 / 4;
-    grid-row: 3 / 4;
-    background: #060610;
-    padding: 0;
-}
 
-.map-bg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCI+PGNpcmNsZSBjeD0iMjAiIGN5PSIyMCIgcj0iMSIgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwwLjA1KSIvPjwvc3ZnPg==');
-    background-size: 20px 20px;
-    opacity: 0.8;
-}
-
-.location-content {
-    position: absolute;
-    bottom: 24px;
-    left: 24px;
-    z-index: 2;
-    display: flex;
-    flex-direction: column;
-}
-
-.location-content i {
-    font-size: 1.5rem;
-    margin-bottom: 5px;
-    filter: drop-shadow(0 0 8px var(--primary-glow));
-}
-
-.location-content span {
-    font-weight: 700;
-    font-size: 1.15rem;
-}
-
-.location-content .availability {
-    color: #4ade80;
-    font-size: 0.75rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    margin-top: 5px;
-    display: flex;
-    align-items: center;
-}
 
 /* Pulsing Dot animation for availability status */
 .pulse-dot {
@@ -2380,21 +2334,185 @@ ul {
     font-weight: 600;
 }
 
-/* Responsiveness for media wrapper */
+/* Responsiveness for Hero Media Wrapper */
 @media (max-width: 1024px) {
-    .phone-mockup {
-        position: relative;
-        right: 0;
-        bottom: 0;
-        margin-top: 20px;
-        margin-left: auto;
-        margin-right: auto;
-    }
-    
     .hero-media-wrapper {
         flex-direction: column;
         height: auto;
     }
+}
+
+/* Mobile Screens Gallery Section Grid */
+.mobile-screens-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    justify-items: center;
+    margin-top: 40px;
+    width: 100%;
+}
+
+@media (max-width: 1200px) {
+    .mobile-screens-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
+}
+
+@media (max-width: 600px) {
+    .mobile-screens-grid {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+}
+
+.mobile-screens-grid .phone-mockup {
+    position: relative;
+    right: auto;
+    bottom: auto;
+    z-index: 5;
+    margin: 0 auto;
+}
+
+/* Static Indicators for Gallery Screens */
+.connected-static {
+    background: rgba(16, 185, 129, 0.08) !important;
+    border-color: rgba(16, 185, 129, 0.15) !important;
+    color: var(--secondary) !important;
+}
+
+.flash-session-static {
+    background: rgba(251, 191, 36, 0.08) !important;
+    border-color: rgba(251, 191, 36, 0.15) !important;
+}
+
+.pulsing-yellow {
+    background: var(--warning) !important;
+    box-shadow: 0 0 6px var(--warning) !important;
+    animation: dotPulse 1.5s infinite;
+}
+
+/* Accent Glows for static cards */
+.bg-glow-rose {
+    border-color: rgba(244, 63, 94, 0.18) !important;
+    background: linear-gradient(135deg, rgba(244, 63, 94, 0.04), rgba(0,0,0,0)) !important;
+    box-shadow: 0 4px 15px rgba(244, 63, 94, 0.06) !important;
+}
+
+.bg-glow-purple {
+    border-color: rgba(168, 85, 247, 0.18) !important;
+    background: linear-gradient(135deg, rgba(168, 85, 247, 0.04), rgba(0,0,0,0)) !important;
+    box-shadow: 0 4px 15px rgba(168, 85, 247, 0.06) !important;
+}
+
+/* DTC lists on static screens */
+.static-dtc-container {
+    max-height: 125px !important;
+}
+
+.active-dtc-pill {
+    background: rgba(244, 63, 94, 0.08) !important;
+    border: 1px solid rgba(244, 63, 94, 0.2) !important;
+    color: var(--accent) !important;
+}
+
+.pending-dtc-pill {
+    background: rgba(251, 191, 36, 0.08) !important;
+    border: 1px solid rgba(251, 191, 36, 0.2) !important;
+    color: var(--warning) !important;
+}
+
+/* Bootloader console log styles */
+.log-terminal-static {
+    background: rgba(0, 0, 0, 0.6) !important;
+    font-family: 'Fira Code', monospace;
+    font-size: 0.62rem;
+    overflow-y: hidden;
+}
+
+.log-item-micro {
+    padding: 2px 0;
+    white-space: nowrap;
+}
+
+.log-item-micro.vci-out {
+    color: var(--primary);
+}
+
+.log-item-micro.ecu-in {
+    color: var(--secondary);
+}
+
+.log-item-micro.info-msg {
+    color: var(--text-tertiary);
+    font-style: italic;
+}
+
+/* Actuator Overrides Styles (Screen 4) */
+.actuator-list {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.actuator-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    border-radius: 8px;
+    padding: 6px 10px;
+    font-size: 0.68rem;
+}
+
+.actuator-item .state-indicator {
+    font-family: 'Fira Code', monospace;
+    font-size: 0.58rem;
+    font-weight: 700;
+    color: var(--text-tertiary);
+    background: rgba(255, 255, 255, 0.05);
+    padding: 2px 6px;
+    border-radius: 4px;
+}
+
+.actuator-item.active-override {
+    border-color: rgba(0, 242, 254, 0.12);
+    background: rgba(0, 242, 254, 0.01);
+}
+
+.actuator-item.active-override .state-indicator.active {
+    color: var(--primary);
+    background: rgba(0, 242, 254, 0.08);
+    border: 1px solid rgba(0, 242, 254, 0.15);
+    text-shadow: 0 0 5px var(--primary-glow);
+}
+
+/* Description texts inside static screens */
+.feature-desc-text {
+    font-size: 0.65rem;
+    color: var(--text-tertiary);
+    margin: 0;
+    line-height: 1.3;
+}
+
+/* Specialized button overrides */
+.btn-rose-clear {
+    background: linear-gradient(135deg, var(--accent), #e11d48) !important;
+    color: #fff !important;
+    box-shadow: 0 4px 10px rgba(244, 63, 94, 0.3) !important;
+}
+
+.btn-disabled-static {
+    background: rgba(255, 255, 255, 0.08) !important;
+    color: rgba(255, 255, 255, 0.4) !important;
+    box-shadow: none !important;
+}
+
+.btn-active-override {
+    background: linear-gradient(135deg, #10b981, #059669) !important;
+    color: #fff !important;
+    box-shadow: 0 4px 10px rgba(16, 185, 129, 0.3) !important;
 }
 
 /* Phone Feature Card Styles (V3 Menu) */
@@ -2468,4 +2586,330 @@ ul {
 @keyframes flashStatus {
     0% { opacity: 0.7; }
     100% { opacity: 1; }
+}
+
+/* Screen 1: Auto detection & Brand Cycle */
+.bg-glow-cyan {
+    border-color: rgba(0, 242, 254, 0.18) !important;
+    background: linear-gradient(135deg, rgba(0, 242, 254, 0.04), rgba(0,0,0,0)) !important;
+    box-shadow: 0 4px 15px rgba(0, 242, 254, 0.06) !important;
+}
+
+.text-center-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.box-title-micro {
+    font-size: 0.58rem;
+    font-weight: 700;
+    color: var(--text-tertiary);
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    letter-spacing: 0.5px;
+}
+
+.brand-anim-wrapper {
+    position: relative;
+    width: 65px;
+    height: 65px;
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(0, 242, 254, 0.15);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 8px;
+    overflow: hidden;
+}
+
+.brand-laser {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--primary);
+    box-shadow: 0 0 8px var(--primary-glow);
+    z-index: 10;
+    animation: laserScan 2.5s infinite ease-in-out;
+}
+
+@keyframes laserScan {
+    0% { top: 0%; opacity: 0; }
+    10% { opacity: 1; }
+    90% { opacity: 1; }
+    100% { top: 100%; opacity: 0; }
+}
+
+.brand-logo-cycle {
+    font-size: 1.8rem;
+    color: var(--primary);
+    filter: drop-shadow(0 0 6px var(--primary-glow));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+.brand-logo-cycle i {
+    position: absolute;
+    opacity: 0;
+    transform: scale(0.8) rotate(-15deg);
+    transition: all 0.4s ease-in-out;
+}
+
+.brand-logo-cycle i.logo-active {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+}
+
+.detect-status-text {
+    font-size: 0.65rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    animation: detectPulse 1.5s infinite alternate;
+}
+
+@keyframes detectPulse {
+    0% { opacity: 0.6; }
+    100% { opacity: 1; text-shadow: 0 0 5px rgba(255, 255, 255, 0.2); }
+}
+
+/* VIN Validation Screen styling */
+.badge-valid {
+    color: #10b981 !important;
+    background: rgba(16, 185, 129, 0.08);
+    border: 1px solid rgba(16, 185, 129, 0.2);
+    font-size: 0.52rem !important;
+    padding: 1px 4px;
+    border-radius: 4px;
+    font-weight: 800;
+}
+
+.dot-green {
+    width: 4px;
+    height: 4px;
+    background: #10b981;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 3px;
+    box-shadow: 0 0 4px #10b981;
+}
+
+.vin-typewriter-box {
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    border-radius: 6px;
+    padding: 6px 8px;
+    font-family: 'Fira Code', monospace;
+    font-size: 0.64rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    text-align: center;
+    position: relative;
+    letter-spacing: 0.2px;
+}
+
+.vin-text-cursor::after {
+    content: '|';
+    color: var(--primary);
+    font-weight: 900;
+    animation: cursorBlink 0.8s infinite;
+}
+
+@keyframes cursorBlink {
+    0%, 100% { opacity: 0; }
+    50% { opacity: 1; }
+}
+
+.vin-progress-track {
+    height: 3px;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 2px;
+    overflow: hidden;
+    margin-top: 4px;
+}
+
+.vin-progress-fill {
+    width: 0%;
+    height: 100%;
+    background: var(--primary);
+    box-shadow: 0 0 4px var(--primary-glow);
+}
+
+.btn-cyan-glow {
+    background: linear-gradient(135deg, var(--primary), var(--secondary)) !important;
+    color: #000 !important;
+    box-shadow: 0 4px 10px var(--primary-glow) !important;
+}
+
+/* Screen 3: DTC Radar Scanning style */
+.radar-sweep-box {
+    position: relative;
+    overflow: hidden;
+}
+
+.radar-line-beam {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 40px;
+    background: linear-gradient(180deg, rgba(16, 185, 129, 0.15) 0%, rgba(16, 185, 129, 0) 100%);
+    border-top: 1px solid #10b981;
+    z-index: 10;
+    animation: radarSweepDown 4s infinite linear;
+    pointer-events: none;
+}
+
+@keyframes radarSweepDown {
+    0% { top: -20%; }
+    100% { top: 110%; }
+}
+
+.pulse-dtc-row {
+    animation: pulseDtcAlert 2s infinite alternate;
+}
+
+@keyframes pulseDtcAlert {
+    0% { box-shadow: 0 0 2px rgba(244, 63, 94, 0); }
+    100% { box-shadow: 0 0 8px rgba(244, 63, 94, 0.15); border-color: rgba(244, 63, 94, 0.3) !important; }
+}
+
+.blink-slow {
+    animation: textBlinkSlow 1.5s infinite alternate;
+}
+
+@keyframes textBlinkSlow {
+    0% { opacity: 0.6; }
+    100% { opacity: 1; }
+}
+
+/* Screen 4: FOTA Flashing Progress Loop & Toggle Animations */
+.fota-progress-loop-bar {
+    width: 0%;
+    transition: width 0.1s linear;
+}
+
+.fota-pct-loop-text {
+    font-family: 'Fira Code', monospace;
+    font-weight: 700;
+}
+
+.animate-toggle-pill-1, .animate-toggle-pill-2 {
+    transition: all 0.3s ease;
+}
+
+.animate-toggle-pill-1.indicator-override-active {
+    color: var(--primary) !important;
+    background: rgba(0, 242, 254, 0.08) !important;
+    border: 1px solid rgba(0, 242, 254, 0.15) !important;
+    text-shadow: 0 0 5px var(--primary-glow) !important;
+}
+
+.animate-toggle-pill-2.indicator-override-active {
+    color: var(--secondary) !important;
+    background: rgba(16, 185, 129, 0.08) !important;
+    border: 1px solid rgba(16, 185, 129, 0.15) !important;
+    text-shadow: 0 0 5px rgba(16, 185, 129, 0.4) !important;
+}
+
+.animate-status-glow.indicator-override-active {
+    animation: flashStatusActive 1s infinite alternate !important;
+}
+
+@keyframes flashStatusActive {
+    0% { opacity: 0.7; box-shadow: 0 0 4px var(--primary-glow); }
+    100% { opacity: 1; box-shadow: 0 0 10px var(--primary-glow); }
+}
+
+/* Expanded Phone Parameter Grid */
+.phone-param-grid-two {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 6px;
+    margin-top: 6px;
+    margin-bottom: 6px;
+}
+
+.param-mini-box {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    padding: 6px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.param-mini-box small {
+    font-size: 0.52rem;
+    color: var(--text-tertiary);
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 0.2px;
+}
+
+.param-mini-box strong {
+    font-family: 'Fira Code', monospace;
+    font-size: 0.72rem;
+    color: var(--text-primary);
+    font-weight: 700;
+    margin-top: 2px;
+}
+
+/* Screen 4: Actuator toggle indicator states */
+.animate-toggle-pill-3, .animate-toggle-pill-4 {
+    transition: all 0.3s ease;
+}
+
+.animate-toggle-pill-3.indicator-override-active {
+    color: var(--primary) !important;
+    background: rgba(0, 242, 254, 0.08) !important;
+    border: 1px solid rgba(0, 242, 254, 0.15) !important;
+    text-shadow: 0 0 5px var(--primary-glow) !important;
+}
+
+.animate-toggle-pill-4.indicator-override-active {
+    color: var(--secondary) !important;
+    background: rgba(16, 185, 129, 0.08) !important;
+    border: 1px solid rgba(16, 185, 129, 0.15) !important;
+    text-shadow: 0 0 5px rgba(16, 185, 129, 0.4) !important;
+}
+
+/* Screen 2: Waveform graph animations */
+.showcase-chart-bars {
+    display: flex;
+    align-items: flex-end;
+    gap: 2px;
+}
+
+.showcase-chart-bars .mini-chart-bar {
+    flex: 1;
+    background: linear-gradient(180deg, var(--primary) 0%, var(--secondary) 100%);
+    box-shadow: 0 0 6px var(--primary-glow);
+    border-radius: 2px 2px 0 0;
+    opacity: 0.85;
+    animation: barWave 1.4s infinite ease-in-out alternate;
+}
+
+.showcase-chart-bars .mini-chart-bar:nth-child(1) { animation-delay: 0.1s; }
+.showcase-chart-bars .mini-chart-bar:nth-child(2) { animation-delay: 0.3s; }
+.showcase-chart-bars .mini-chart-bar:nth-child(3) { animation-delay: 0.5s; }
+.showcase-chart-bars .mini-chart-bar:nth-child(4) { animation-delay: 0.2s; }
+.showcase-chart-bars .mini-chart-bar:nth-child(5) { animation-delay: 0.4s; }
+.showcase-chart-bars .mini-chart-bar:nth-child(6) { animation-delay: 0.6s; }
+.showcase-chart-bars .mini-chart-bar:nth-child(7) { animation-delay: 0.15s; }
+.showcase-chart-bars .mini-chart-bar:nth-child(8) { animation-delay: 0.35s; }
+.showcase-chart-bars .mini-chart-bar:nth-child(9) { animation-delay: 0.55s; }
+.showcase-chart-bars .mini-chart-bar:nth-child(10) { animation-delay: 0.25s; }
+
+@keyframes barWave {
+    0% { height: 15%; }
+    100% { height: 85%; }
 }

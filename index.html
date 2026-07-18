@@ -41,10 +41,11 @@
     <!-- Navigation -->
     <nav class="glass-nav">
         <div class="container nav-container">
-            <a href="#" class="logo">Rajaganesan<span class="dot">S.</span></a>
+            <a href="#" class="logo">Rajaganesan <span class="dot">S</span></a>
             <div class="nav-links">
                 <a href="#home" class="nav-link active">Home</a>
                 <a href="#about" class="nav-link">About</a>
+                <a href="#mobile-showcase" class="nav-link">Mobile Suite</a>
                 <a href="#diagnostics" class="nav-link">Diagnostics Console</a>
                 <a href="#skills" class="nav-link">Skills</a>
                 <a href="#experience" class="nav-link">Experience</a>
@@ -64,7 +65,7 @@
             <div class="container hero-container">
                 <div class="hero-content">
                     <span class="greeting"><i class="fa-solid fa-microchip"></i> Senior Software Engineer @ Tamilzorous</span>
-                    <h1 class="hero-name">Rajaganesan <br> S</h1>
+                    <h1 class="hero-name">Rajaganesan S</h1>
                     
                     <div class="typing-container">
                         <span class="static-text">I am </span>
@@ -101,7 +102,7 @@
                                         <span class="window-title">DiagnosticsProfile.kt</span>
                                     </div>
                                     <pre><code>// Senior Software Engineer
-object RajaganesanS {
+object Rajaganesan_S {
     const val role = "Senior Software Engineer"
     const val experience = "3+ Years"
     const val company = "Tamilzorous Pvt Ltd"
@@ -110,87 +111,6 @@ object RajaganesanS {
     val flashing = listOf("Bosch", "Sedemac", "Continental", "Pricol")
     val evSystems = listOf("VCU", "BMS", "MCU", "iVCU", "LCM")
 }</code></pre>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Smartphone Mockup representing mobile app development -->
-                        <div class="phone-mockup">
-                            <div class="phone-notch"></div>
-                            <div class="phone-screen">
-                                <div class="phone-header">
-                                    <span class="phone-time">13:09</span>
-                                    <div class="phone-icons">
-                                        <i class="fa-solid fa-bluetooth text-cyan pulse"></i>
-                                        <i class="fa-solid fa-wifi"></i>
-                                        <i class="fa-solid fa-battery-three-quarters"></i>
-                                    </div>
-                                </div>
-                                <div class="app-container">
-                                    <div class="app-header">
-                                        <span class="app-logo"><i class="fa-solid fa-gears text-cyan"></i> Diagnostics App</span>
-                                    </div>
-                                    <div class="app-body">
-                                        <!-- VCI Connection -->
-                                        <div class="vci-connection-status">
-                                            <span class="status-indicator" id="phoneStatusIndicator"></span> <span id="phoneStatusText">VCI Offline</span>
-                                        </div>
-
-                                        <!-- Option 1: Battery Voltage -->
-                                        <div class="phone-feature-card">
-                                            <div class="feature-header">
-                                                <span><i class="fa-solid fa-car-battery text-cyan"></i> Battery Voltage</span>
-                                                <span id="phoneVolt" class="feature-val">0.0V</span>
-                                            </div>
-                                        </div>
-
-                                        <!-- Option 2: Read Live Sensor Data -->
-                                        <div class="phone-feature-card">
-                                            <div class="feature-header">
-                                                <span><i class="fa-solid fa-gauge-high text-emerald"></i> Read Live Sensor Data</span>
-                                                <span id="phoneRpm" class="feature-val">0 RPM</span>
-                                            </div>
-                                            <div class="app-chart-mini">
-                                                <div class="mini-chart-bar" style="height: 20%" id="mbar1"></div>
-                                                <div class="mini-chart-bar" style="height: 40%" id="mbar2"></div>
-                                                <div class="mini-chart-bar" style="height: 60%" id="mbar3"></div>
-                                                <div class="mini-chart-bar" style="height: 80%" id="mbar4"></div>
-                                                <div class="mini-chart-bar" style="height: 70%" id="mbar5"></div>
-                                                <div class="mini-chart-bar" style="height: 50%" id="mbar6"></div>
-                                                <div class="mini-chart-bar" style="height: 30%" id="mbar7"></div>
-                                                <div class="mini-chart-bar" style="height: 60%" id="mbar8"></div>
-                                                <div class="mini-chart-bar" style="height: 80%" id="mbar9"></div>
-                                                <div class="mini-chart-bar" style="height: 40%" id="mbar10"></div>
-                                            </div>
-                                        </div>
-
-                                        <!-- Option 3: DTCs with Indication -->
-                                        <div class="app-dtc-box">
-                                            <span class="box-title"><i class="fa-solid fa-triangle-exclamation text-rose"></i> DTCs with Indication</span>
-                                            <div id="phoneDtcList">
-                                                <div class="mini-dtc none">No active diagnostic faults</div>
-                                            </div>
-                                        </div>
-
-                                        <!-- Option 4: ECU Flashing -->
-                                        <div class="phone-feature-card">
-                                            <div class="feature-header">
-                                                <span><i class="fa-solid fa-download text-purple"></i> ECU Flashing</span>
-                                                <span class="app-fota-status" id="phoneFotaStatus">FOTA Idle</span>
-                                            </div>
-                                            <div class="phone-progress-bar-bg hidden" id="phoneProgressBg">
-                                                <div class="phone-progress-bar" id="phoneProgressBar"></div>
-                                            </div>
-                                        </div>
-
-                                        <!-- Option 5: IO Control Button -->
-                                        <div class="phone-io-block">
-                                            <button class="app-action-btn" id="phoneIoBtn" disabled>
-                                                <i class="fa-solid fa-sliders"></i> IO Control Button
-                                            </button>
-                                            <div id="phoneIoStatus" class="phone-io-status idle">IO State: Inactive</div>
-                                        </div>
-                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -212,7 +132,7 @@ object RajaganesanS {
                             <h3>Professional Summary</h3>
                         </div>
                         <p>
-                            Results-driven **Senior Software Engineer** with 3+ years of experience developing advanced vehicle diagnostics applications for multiple ECUs in the automotive domain. Specialized in **UDS (ISO 14229)**, **OBD-II**, **CAN**, and **K-Line** communication protocols.
+                            Results-driven <strong>Senior Software Engineer</strong> with 3+ years of experience developing advanced vehicle diagnostics applications for multiple ECUs in the automotive domain. Specialized in <strong>UDS (ISO 14229)</strong>, <strong>OBD-II</strong>, <strong>CAN</strong>, and <strong>K-Line</strong> communication protocols.
                         </p>
                         <p>
                             Proven expertise in ECU flashing, DTC management, routine controls, and cross-platform diagnostic solutions. Experienced in delivering robust dealer-level applications used by technicians across two-wheelers, three-wheelers, and electric vehicles.
@@ -247,13 +167,256 @@ object RajaganesanS {
                         </div>
                     </div>
 
-                    <!-- Map / Location Card -->
-                    <div class="glass-card bento-item bento-location">
-                        <div class="map-bg"></div>
-                        <div class="location-content">
-                            <i class="fas fa-map-marker-alt text-cyan"></i>
-                            <span>TIDEL Park, Salem, Tamil Nadu, India</span>
-                            <small class="availability"><span class="pulse-dot"></span> Open to Opportunities</small>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Diagnostics Mobile App Suite Showcase -->
+        <section id="mobile-showcase" class="section mobile-showcase-section">
+            <div class="container">
+                <h2 class="section-title">Diagnostics Mobile App Suite</h2>
+                <p class="section-subtitle">
+                    A comprehensive suite of vehicle diagnostic screens developed natively for Android and cross-platform Flutter, simulating real-time connectivity, dynamic parameter polling, DTC parsing, and actuator IO overrides.
+                </p>
+                
+                <div class="mobile-screens-grid">
+                    <!-- Screen 1: Auto Detection & VIN Validation -->
+                    <div class="phone-mockup">
+                        <div class="phone-notch"></div>
+                        <div class="phone-screen">
+                            <div class="phone-header">
+                                <span class="phone-time">13:23</span>
+                                <div class="phone-icons">
+                                    <i class="fa-solid fa-bluetooth text-cyan pulse"></i>
+                                    <i class="fa-solid fa-wifi text-emerald"></i>
+                                    <i class="fa-solid fa-battery-three-quarters"></i>
+                                </div>
+                            </div>
+                            <div class="app-container">
+                                <div class="app-header">
+                                    <span class="app-logo"><i class="fa-solid fa-gears text-cyan"></i> Diagnostics App</span>
+                                </div>
+                                <div class="app-body">
+                                    <!-- Auto Vehicle Detection Box -->
+                                    <div class="phone-feature-card bg-glow-cyan text-center-box">
+                                        <span class="box-title-micro">Auto Vehicle Detection</span>
+                                        <div class="brand-anim-wrapper">
+                                            <div class="brand-laser"></div>
+                                            <div class="brand-logo-cycle">
+                                                <i class="fa-solid fa-motorcycle logo-1"></i>
+                                                <i class="fa-solid fa-car logo-2"></i>
+                                                <i class="fa-solid fa-bolt logo-3"></i>
+                                                <i class="fa-solid fa-microchip logo-4"></i>
+                                            </div>
+                                        </div>
+                                        <span class="detect-status-text">Scanning Protocol...</span>
+                                    </div>
+
+                                    <!-- VIN Validation Box -->
+                                    <div class="phone-feature-card">
+                                        <div class="feature-header">
+                                            <span><i class="fa-solid fa-barcode text-cyan"></i> VIN Validation</span>
+                                            <span class="vin-validation-status badge-valid"><span class="dot-green"></span> VALID</span>
+                                        </div>
+                                        <div class="vin-typewriter-box">
+                                            <span class="vin-text-cursor">MD2A14B50H1094382</span>
+                                        </div>
+                                        <div class="vin-progress-track">
+                                            <div class="vin-progress-fill"></div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="phone-io-block mt-auto">
+                                        <button class="app-action-btn btn-cyan-glow" disabled><i class="fa-solid fa-search"></i> Auto Connect VCI</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Screen 2: Live Parameter Read -->
+                    <div class="phone-mockup">
+                        <div class="phone-notch"></div>
+                        <div class="phone-screen">
+                            <div class="phone-header">
+                                <span class="phone-time">13:23</span>
+                                <div class="phone-icons">
+                                    <i class="fa-solid fa-bluetooth text-cyan pulse"></i>
+                                    <i class="fa-solid fa-wifi text-emerald"></i>
+                                    <i class="fa-solid fa-battery-three-quarters text-emerald"></i>
+                                </div>
+                            </div>
+                            <div class="app-container">
+                                <div class="app-header">
+                                    <span class="app-logo"><i class="fa-solid fa-gears text-cyan"></i> Diagnostics App</span>
+                                </div>
+                                <div class="app-body">
+                                    <!-- VCI Connection -->
+                                    <div class="vci-connection-status connected-static">
+                                        <span class="status-indicator online"></span> <span>VCI Connected</span>
+                                    </div>
+
+                                    <!-- Expanded Live Parameters Grid -->
+                                    <div class="phone-feature-card bg-glow-cyan">
+                                        <div class="feature-header">
+                                            <span><i class="fa-solid fa-gauge-high text-emerald"></i> Live Parameter Read</span>
+                                            <span class="badge validated-badge text-emerald blink-slow"><span class="dot-green"></span> POLLING</span>
+                                        </div>
+                                        <div class="phone-param-grid-two">
+                                            <div class="param-mini-box">
+                                                <small>RPM</small>
+                                                <strong id="showcaseRpm">0 RPM</strong>
+                                            </div>
+                                            <div class="param-mini-box">
+                                                <small>VOLTS</small>
+                                                <strong id="showcaseVolt">0.0V</strong>
+                                            </div>
+                                            <div class="param-mini-box">
+                                                <small>TEMP</small>
+                                                <strong id="showcaseTemp">0°C</strong>
+                                            </div>
+                                            <div class="param-mini-box">
+                                                <small>TPS</small>
+                                                <strong id="showcaseTps">0%</strong>
+                                            </div>
+                                            <div class="param-mini-box">
+                                                <small>SPEED</small>
+                                                <strong id="showcaseSpeed">0 km/h</strong>
+                                            </div>
+                                        </div>
+                                        
+                                        <!-- 10-bar waveform graph -->
+                                        <div class="app-chart-mini mt-10 showcase-chart-bars">
+                                            <div class="mini-chart-bar"></div>
+                                            <div class="mini-chart-bar"></div>
+                                            <div class="mini-chart-bar"></div>
+                                            <div class="mini-chart-bar"></div>
+                                            <div class="mini-chart-bar"></div>
+                                            <div class="mini-chart-bar"></div>
+                                            <div class="mini-chart-bar"></div>
+                                            <div class="mini-chart-bar"></div>
+                                            <div class="mini-chart-bar"></div>
+                                            <div class="mini-chart-bar"></div>
+                                        </div>
+                                    </div>
+
+                                    <div class="phone-io-block mt-auto">
+                                        <button class="app-action-btn btn-cyan-glow" disabled><i class="fa-solid fa-floppy-disk"></i> Save Parameter Log</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Screen 3: Read DTC & Radar Scan -->
+                    <div class="phone-mockup">
+                        <div class="phone-notch"></div>
+                        <div class="phone-screen">
+                            <div class="phone-header">
+                                <span class="phone-time">13:23</span>
+                                <div class="phone-icons">
+                                    <i class="fa-solid fa-bluetooth text-cyan"></i>
+                                    <i class="fa-solid fa-wifi text-emerald"></i>
+                                    <i class="fa-solid fa-battery-three-quarters text-rose"></i>
+                                </div>
+                            </div>
+                            <div class="app-container">
+                                <div class="app-header">
+                                    <span class="app-logo"><i class="fa-solid fa-gears text-cyan"></i> Diagnostics App</span>
+                                </div>
+                                <div class="app-body">
+                                    <div class="vci-connection-status connected-static">
+                                        <span class="status-indicator online"></span> <span>VCI Connected</span>
+                                    </div>
+                                    
+                                    <div class="phone-feature-card bg-glow-rose">
+                                        <div class="feature-header">
+                                            <span class="text-rose"><i class="fa-solid fa-radar fa-spin"></i> Read DTC Active...</span>
+                                            <span class="feature-val text-rose blink-slow">3 Faults</span>
+                                        </div>
+                                    </div>
+
+                                    <!-- DTC Radar Scanning container -->
+                                    <div class="app-dtc-box static-dtc-container radar-sweep-box">
+                                        <div class="radar-line-beam"></div>
+                                        <span class="box-title">DTC Scan Indications</span>
+                                        <div class="mini-dtc active-dtc-pill pulse-dtc-row">P0302 - Misfire Cyl 2</div>
+                                        <div class="mini-dtc pending-dtc-pill pulse-dtc-row">U0100 - CAN Comm Lost</div>
+                                        <div class="mini-dtc active-dtc-pill pulse-dtc-row">C1025 - ABS Rear Circuit</div>
+                                    </div>
+
+                                    <div class="phone-feature-card">
+                                        <div class="feature-header">
+                                            <span><i class="fa-solid fa-file-invoice text-cyan"></i> Freeze Frame Data</span>
+                                            <span class="feature-val">Lock Active</span>
+                                        </div>
+                                        <p class="feature-desc-text">Locked at RPM: 4120, Speed: 62km/h, Temp: 92°C.</p>
+                                    </div>
+                                    
+                                    <div class="phone-io-block mt-auto">
+                                        <button class="app-action-btn btn-rose-clear" disabled><i class="fa-solid fa-trash-can"></i> Clear Trouble Codes</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Screen 4: Actuator Test (IO Control) -->
+                    <div class="phone-mockup">
+                        <div class="phone-notch"></div>
+                        <div class="phone-screen">
+                            <div class="phone-header">
+                                <span class="phone-time">13:23</span>
+                                <div class="phone-icons">
+                                    <i class="fa-solid fa-bluetooth text-cyan"></i>
+                                    <i class="fa-solid fa-wifi text-emerald"></i>
+                                    <i class="fa-solid fa-battery-three-quarters text-emerald"></i>
+                                </div>
+                            </div>
+                            <div class="app-container">
+                                <div class="app-header">
+                                    <span class="app-logo"><i class="fa-solid fa-sliders text-cyan"></i> Actuator Test</span>
+                                </div>
+                                <div class="app-body">
+                                    <div class="vci-connection-status connected-static">
+                                        <span class="status-indicator online"></span> <span>IO Override Mode Active</span>
+                                    </div>
+
+                                    <!-- IO Control Override Status -->
+                                    <div class="phone-feature-card bg-glow-cyan">
+                                        <div class="feature-header">
+                                            <span><i class="fa-solid fa-microchip text-cyan"></i> Command Status</span>
+                                            <span class="feature-val text-emerald">UDS Service $2F</span>
+                                        </div>
+                                    </div>
+
+                                    <!-- Actuator Override Toggles list -->
+                                    <div class="actuator-list">
+                                        <div class="actuator-item active-override">
+                                            <span>Injector Pulse Relay</span>
+                                            <span class="state-indicator active animate-toggle-pill-1">ACTIVE</span>
+                                        </div>
+                                        <div class="actuator-item">
+                                            <span>Fuel Pump Relay</span>
+                                            <span class="state-indicator animate-toggle-pill-2">DEFAULT</span>
+                                        </div>
+                                        <div class="actuator-item active-override">
+                                            <span>Radiator Fan Override</span>
+                                            <span class="state-indicator active animate-toggle-pill-3">ACTIVE</span>
+                                        </div>
+                                        <div class="actuator-item">
+                                            <span>MIL Warning Lamp</span>
+                                            <span class="state-indicator animate-toggle-pill-4">DEFAULT</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="phone-io-block mt-auto">
+                                        <button class="app-action-btn btn-active-override" disabled><i class="fa-solid fa-sliders"></i> IO Overrides Active</button>
+                                        <div class="phone-io-status active animate-status-glow">IO Control: ACTIVE</div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -803,7 +966,7 @@ object RajaganesanS {
         <footer class="footer">
             <div class="container">
                 <div class="footer-content">
-                    <div class="footer-logo">Rajaganesan<span class="dot">S.</span></div>
+                    <div class="footer-logo">Rajaganesan <span class="dot">S</span></div>
                     <p class="footer-text">Leveraging UDS, OBD-II, CAN, and cross-platform apps to build connected mobility solutions.</p>
                     <p class="copyright">&copy; 2026 Rajaganesan S. Built for Ather, BOSCH, TVS and the Automotive Future.</p>
                 </div>
