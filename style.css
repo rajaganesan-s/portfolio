@@ -1413,6 +1413,10 @@ ul {
     border: 1px solid var(--card-border);
 }
 
+.gradient-1 {
+    background: linear-gradient(135deg, #083344, #164e63);
+}
+
 .gradient-2 {
     background: linear-gradient(135deg, #022c22, #064e3b);
 }
