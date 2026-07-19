@@ -143,7 +143,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const dynamicText = document.querySelector('.dynamic-text');
     if (dynamicText) {
         const words = [
-            "a Senior Software Engineer",
+            "a Software Engineer",
             "a Vehicle Diagnostics Specialist (UDS & OBD-II)",
             "an Android & Kotlin Specialist",
             "a Flutter Cross-Platform Developer",
@@ -1313,4 +1313,55 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     initShowcaseAnimations();
+
+    // ==========================================
+    // 7. INTERACTIVE RESUME CONSOLE LOGIC
+    // ==========================================
+    const resumeModal = document.getElementById('resumeModal');
+    const closeResumeBtn = document.getElementById('closeResumeBtn');
+    const resumeModalOverlay = document.querySelector('.resume-modal-overlay');
+    const resumePrintBtn = document.getElementById('resumePrintBtn');
+    const resumeThemeToggle = document.getElementById('resumeThemeToggle');
+    const resumeSheet = document.getElementById('resumeSheet');
+
+    const openResumeModal = () => {
+        if (resumeModal) {
+            resumeModal.classList.add('active');
+            document.body.style.overflow = 'hidden'; // Lock main scroll
+        }
+    };
+
+    const closeResumeModal = () => {
+        if (resumeModal) {
+            resumeModal.classList.remove('active');
+            document.body.style.overflow = ''; // Unlock main scroll
+        }
+    };
+
+    // Attach click listeners to all buttons triggers
+    document.querySelectorAll('#navResumeBtn, #heroResumeBtn').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            openResumeModal();
+        });
+    });
+
+    if (closeResumeBtn) closeResumeBtn.addEventListener('click', closeResumeModal);
+    if (resumeModalOverlay) resumeModalOverlay.addEventListener('click', closeResumeModal);
+
+    // Escape key closes modal
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+            closeResumeModal();
+        }
+    });
+
+
+
+    // Direct Print/PDF generation
+    if (resumePrintBtn) {
+        resumePrintBtn.addEventListener('click', () => {
+            window.print();
+        });
+    }
 });
