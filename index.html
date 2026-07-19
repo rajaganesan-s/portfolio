@@ -78,12 +78,12 @@
                     
                     <div class="hero-buttons">
                         <a href="#mobile-showcase" class="btn btn-primary"><i class="fa-solid fa-mobile-screen-button"></i> View Diagnostics App</a>
-                        <a href="#projects" class="btn btn-outline">View Projects</a>
+                        <a href="#projects" class="In thbtn btn-outline">View Projects</a>
                     </div>
 
                     <div class="social-links">
                         <a href="https://github.com/rajaganesan-s" target="_blank" aria-label="GitHub Profile"><i class="fab fa-github"></i></a>
-                        <a href="https://in.linkedin.com/in/rajaganesan" target="_blank" aria-label="LinkedIn Profile"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://in.linkedin.com/in/rajaganesansubramani" target="_blank" aria-label="LinkedIn Profile"><i class="fab fa-linkedin-in"></i></a>
                         <a href="https://www.instagram.com/rajaganesansubramani/" target="_blank" aria-label="Instagram Profile"><i class="fab fa-instagram"></i></a>
                         <a href="mailto:rajaganesansubramani@gmail.com" aria-label="Email Contact"><i class="fas fa-envelope"></i></a>
                     </div>
@@ -687,122 +687,273 @@ object Rajaganesan_S {
         <section id="experience" class="section">
             <div class="container">
                 <h2 class="section-title">Professional Experience</h2>
-                
-                <div class="timeline-grid">
-                    <!-- Professional Experience -->
-                    <div class="timeline-column">
-                        <h3 class="column-title"><i class="fas fa-briefcase"></i> Experience</h3>
+                <p class="section-subtitle">A detailed look at my professional journey, academic background, and engineering achievements in automotive software development.</p>
 
-                        <div class="glass-card timeline-card">
-                            <span class="timeline-date">May 2023 - Present</span>
-                            <h4>Senior Software Engineer</h4>
-                            <div class="timeline-school">
-                                <i class="fas fa-building text-cyan"></i> Tamilzorous Pvt Ltd, TIDEL Park, Salem
+                <div class="experience-dashboard-grid">
+                    <!-- Left Side: Custom Timeline Journey -->
+                    <div class="experience-timeline-container">
+                        <div class="experience-timeline-line">
+                            <div class="timeline-data-packet"></div>
+                        </div>
+                        
+                        <div class="timeline-list">
+                            <!-- Senior Software Engineer Card -->
+                            <div class="timeline-item">
+                                <div class="timeline-node active"><i class="fa-solid fa-wifi"></i></div>
+                                <div class="glass-card timeline-card active-role">
+                                    <div class="role-badge">ACTIVE DIAG SESSION</div>
+                                    <span class="timeline-date">May 2023 - Present</span>
+                                    <h4>Senior Software Engineer</h4>
+                                    <div class="timeline-school">
+                                        <i class="fas fa-building text-cyan"></i> Tamilzorous Pvt Ltd, TIDEL Park, Salem
+                                    </div>
+                                    
+                                    <!-- Tab Controls inside the card -->
+                                    <div class="role-tabs">
+                                        <button class="role-tab active" data-role-tab="responsibilities">
+                                            <i class="fa-solid fa-gears"></i> Core Focus
+                                        </button>
+                                        <button class="role-tab" data-role-tab="android-suite">
+                                            <i class="fa-brands fa-android"></i> Android Suite
+                                        </button>
+                                        <button class="role-tab" data-role-tab="crossplatform-vci">
+                                            <i class="fa-solid fa-network-wired"></i> Cross-Platform & VCI
+                                        </button>
+                                    </div>
+                                    
+                                    <!-- Tab Content 1: Responsibilities -->
+                                    <div class="role-tab-content active" id="role-responsibilities">
+                                        <div class="experience-subblock">
+                                            <h5>Key Responsibilities:</h5>
+                                            <ul class="diag-bullet-list">
+                                                <li><i class="fa-solid fa-circle-check text-cyan"></i> <span>Developing dealer-level diagnostics applications for multiple OEMs and ECU platforms.</span></li>
+                                                <li><i class="fa-solid fa-circle-check text-cyan"></i> <span>Implementing UDS (ISO 14229) and OBD-II diagnostic services including Read/Write PID/DID data, DTC handling, Routine Controls, and Actuator/IO overrides.</span></li>
+                                                <li><i class="fa-solid fa-circle-check text-cyan"></i> <span>Integrating ECU flashing workflows and bootloader sequences for Bosch, Sedemac, Continental, Pricol, and other ECU vendors.</span></li>
+                                                <li><i class="fa-solid fa-circle-check text-cyan"></i> <span>Supporting diagnostics for EMS, ABS, Cluster, ISG, Keyless, VCU, iVCU, LCM, MCU, and BMS controllers.</span></li>
+                                                <li><i class="fa-solid fa-circle-check text-cyan"></i> <span>Performing firmware validation and communication testing using PCAN Viewer and VCI tools.</span></li>
+                                                <li><i class="fa-solid fa-circle-check text-cyan"></i> <span>Consistently delivering robust and stable applications within committed timelines.</span></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Tab Content 2: Android Suite -->
+                                    <div class="role-tab-content" id="role-android-suite">
+                                        <div class="experience-subblock">
+                                            <h5>Major Native Android Projects (Java & Kotlin):</h5>
+                                            <p class="role-subblock-desc">
+                                                Enterprise applications used globally by authorized dealer technicians to scan trouble codes, clear DTCs, execute ECU flashing, and validate vehicle repairs:
+                                            </p>
+                                            <div class="project-pill-container">
+                                                <span class="project-pill" title="Native Android Diagnostics"><i class="fa-brands fa-android"></i> TVS RIDEScan 2.0</span>
+                                                <span class="project-pill" title="Native Android Diagnostics"><i class="fa-brands fa-android"></i> TVS RIDEScan 3W</span>
+                                                <span class="project-pill" title="Native Android Diagnostics"><i class="fa-brands fa-android"></i> TVS RIDEScan IB</span>
+                                                <span class="project-pill" title="Native Android Diagnostics"><i class="fa-brands fa-android"></i> TVS RIDEScan Europe</span>
+                                                <span class="project-pill" title="Electric Vehicle Diagnostics"><i class="fa-solid fa-bolt text-emerald"></i> TVS eRIDEScan 2W</span>
+                                                <span class="project-pill" title="BMW Diagnostic Platform"><i class="fa-solid fa-car text-blue"></i> BMW K01 India</span>
+                                                <span class="project-pill" title="BMW Diagnostic Platform"><i class="fa-solid fa-car text-blue"></i> BMW K01 China</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Tab Content 3: Cross-Platform & VCI -->
+                                    <div class="role-tab-content" id="role-crossplatform-vci">
+                                        <div class="experience-subblock">
+                                            <h5>Cross-Platform Development (Flutter):</h5>
+                                            <p class="role-subblock-desc">
+                                                Developed Service & Master PRO applications for Android and iOS devices supporting multi-brand diagnostics.
+                                            </p>
+                                            <div class="brand-log-row">
+                                                <span class="badge-brand"><i class="fa-solid fa-motorcycle"></i> Multi-Brand Support:</span>
+                                                <span class="brand-item">TVS</span>
+                                                <span class="brand-item">Honda</span>
+                                                <span class="brand-item">Ather</span>
+                                                <span class="brand-item">Ola</span>
+                                                <span class="brand-item">Hero</span>
+                                                <span class="brand-item">BMW</span>
+                                                <span class="brand-item">Royal Enfield</span>
+                                                <span class="brand-item">Bajaj</span>
+                                            </div>
+                                        </div>
+                                        <div class="experience-subblock pt-10">
+                                            <h5>VCI Management & Remote Diagnostics:</h5>
+                                            <p class="role-subblock-desc">
+                                                Designed and maintained cross-functional communication tools for vehicle communication interfaces (VCIs).
+                                            </p>
+                                            <div class="vci-comms-grid">
+                                                <div class="vci-comm-item"><i class="fa-brands fa-bluetooth"></i> Bluetooth</div>
+                                                <div class="vci-comm-item"><i class="fa-solid fa-wifi"></i> BLE / Wi-Fi</div>
+                                                <div class="vci-comm-item"><i class="fa-solid fa-usb"></i> USB Serial</div>
+                                            </div>
+                                            <div class="highlight-box">
+                                                <i class="fa-solid fa-award text-emerald"></i>
+                                                <div class="highlight-content">
+                                                    <strong>Remote Diagnostics:</strong> Enabled customer support team to access technician's mobile devices to perform diagnostics and flashing from anywhere.
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                             
-                            <div class="experience-subblock">
-                                <h5>Key Responsibilities:</h5>
-                                <p class="timeline-desc-bullets">
-                                    <i class="fa-solid fa-circle-check"></i> Developing dealer-level vehicle diagnostics applications for multiple OEMs and ECU platforms.<br>
-                                    <i class="fa-solid fa-circle-check"></i> Implementing UDS and OBD-II diagnostic services including Read/Write Data, DTC handling, Routine Control, and IO Control.<br>
-                                    <i class="fa-solid fa-circle-check"></i> Integrating ECU flashing workflows for Bosch, Sedemac, Continental, Pricol, and other ECU vendors.<br>
-                                    <i class="fa-solid fa-circle-check"></i> Supporting diagnostics for EMS, ABS, Cluster, ISG, Keyless, VCU, iVCU, LCM, MCU, and BMS ECUs.<br>
-                                    <i class="fa-solid fa-circle-check"></i> Performing firmware validation and communication testing using PCAN Viewer and VCI tools.<br>
-                                    <i class="fa-solid fa-circle-check"></i> Delivering robust applications within project timelines while ensuring flashing reliability and performance.
-                                </p>
-                            </div>
-
-                            <div class="experience-subblock pt-10">
-                                <h5>Major Native Android Projects (Java & Kotlin):</h5>
-                                <div class="project-pill-container">
-                                    <span class="project-pill">TVS RIDEScan 2.0</span>
-                                    <span class="project-pill">TVS RIDEScan 3W</span>
-                                    <span class="project-pill">TVS RIDEScan IB</span>
-                                    <span class="project-pill">TVS RIDEScan Europe</span>
-                                    <span class="project-pill">TVS eRIDEScan 2W</span>
-                                    <span class="project-pill">BMW K01 India</span>
-                                    <span class="project-pill">BMW K01 China</span>
-                                </div>
-                                <p class="timeline-desc italic">
-                                    These applications are used by authorized dealer technicians to diagnose vehicle issues, clear DTCs, perform ECU flashing, and validate repairs.
-                                </p>
-                            </div>
-
-                            <div class="experience-subblock pt-10">
-                                <h5>Cross-Platform Development (Flutter):</h5>
-                                <p class="timeline-desc">
-                                    Developed Service and Master PRO applications for Android and iOS to support generic diagnostic operations across multiple vehicle brands.
-                                </p>
-                                <div class="tag-label-group">
-                                    <strong>Supported Brands:</strong> TVS, Honda, Ather, Ola, Hero, BMW, Royal Enfield, Bajaj.
-                                </div>
-                                <div class="tag-label-group">
-                                    <strong>Features Implemented:</strong> Generic UDS diagnostics, OBD-II standard services, Multi-brand vehicle support, Cross-platform communication handling.
+                            <!-- Software Developer Trainee Card -->
+                            <div class="timeline-item">
+                                <div class="timeline-node"><i class="fa-solid fa-circle"></i></div>
+                                <div class="glass-card timeline-card">
+                                    <span class="timeline-date">Jan 2022 - May 2023</span>
+                                    <h4>Software Developer Trainee</h4>
+                                    <div class="timeline-school">
+                                        <i class="fas fa-laptop-code text-cyan"></i> Tamilzorous Pvt. Ltd.
+                                    </div>
+                                    <p class="timeline-desc">
+                                        Gained hands-on experience in software development during final college years. Developed interface modules for classic Bluetooth and USB serial. Interfaced with simple OBD-II commands and parsed standard responses.
+                                    </p>
                                 </div>
                             </div>
-
-                            <div class="experience-subblock pt-10">
-                                <h5>VCI Management & Communication:</h5>
-                                <p class="timeline-desc">
-                                    Designed and maintained cross-functional communication tools for VCI devices supporting: <strong>Bluetooth, BLE, Wi-Fi, USB</strong>.
-                                </p>
-                                 <p class="timeline-desc highlight-box">
-                                     <i class="fa-solid fa-award"></i> <strong>Key Achievement:</strong> Successfully contributed to remote diagnostics capability, enabling the customer support team to access the technicians mobile to perform diagnostics from anywhere.
-                                 </p>
+                            
+                            <!-- Education: B.E. CSE -->
+                            <div class="timeline-item">
+                                <div class="timeline-node"><i class="fa-solid fa-circle"></i></div>
+                                <div class="glass-card timeline-card">
+                                    <span class="timeline-date">2019 - 2023</span>
+                                    <h4>B.E. Computer Science & Engineering</h4>
+                                    <div class="timeline-school">
+                                        <i class="fas fa-university text-cyan"></i> AVS Engineering College
+                                    </div>
+                                    <div class="timeline-score"><i class="fa-solid fa-graduation-cap"></i> CGPA: 8.23</div>
+                                    <p class="timeline-desc">
+                                        Specialized in core computer science. Published a research paper on <strong>IoT-based Home Automation</strong>, integrating hardware and software.
+                                    </p>
+                                </div>
                             </div>
-                        </div>
-
-                        <div class="glass-card timeline-card">
-                            <span class="timeline-date">Jan 2022 - May 2023</span>
-                            <h4>Software Developer Trainee</h4>
-                            <div class="timeline-school">
-                                <i class="fas fa-laptop-code"></i> Tamilzorous Pvt. Ltd.
+                            
+                            <!-- Education: HSC -->
+                            <div class="timeline-item">
+                                <div class="timeline-node"><i class="fa-solid fa-circle"></i></div>
+                                <div class="glass-card timeline-card">
+                                    <span class="timeline-date">2019</span>
+                                    <h4>HSC (12th Grade)</h4>
+                                    <div class="timeline-school">
+                                        <i class="fas fa-school text-cyan"></i> Govt. Higher Secondary School, Vanavasi
+                                    </div>
+                                    <div class="timeline-score"><i class="fa-solid fa-percent"></i> Percentage: 69.83%</div>
+                                </div>
                             </div>
-                            <p class="timeline-desc">
-                                Gained hands-on experience in software development during final college years. Developed interface modules for classic Bluetooth and USB serial. Interfaced with simple OBD-II commands and parsed standard responses.
-                            </p>
                         </div>
                     </div>
-
-                    <!-- Achievements & Education -->
-                    <div class="timeline-column">
-                        <h3 class="column-title"><i class="fa-solid fa-trophy"></i> Key Achievements</h3>
-
-                        <div class="glass-card timeline-card border-emerald">
-                            <span class="timeline-date">Production Impact</span>
-                            <h4>Delivered Successfully</h4>
-                            <p class="timeline-desc-bullets">
-                                <i class="fa-solid fa-star text-emerald"></i> Delivered multiple production-grade diagnostic applications for TVS and BMW platforms.<br>
-                                <i class="fa-solid fa-star text-emerald"></i> Integrated OEM-specific flashing flows across more than 5+ ECU brands.<br>
-                                <i class="fa-solid fa-star text-emerald"></i> Created the OBD2B EMS new flashing sequence to access the address-based flashing sequence across multi-variants.<br>
-                                <i class="fa-solid fa-star text-emerald"></i> Implemented reliable DTC parsing and clearing mechanisms for dealer service operations.<br>
-                                <i class="fa-solid fa-star text-emerald"></i> Supported electric vehicle ECU diagnostics, including BMS, MCU, VCU, and iVCU systems.<br>
-                                <i class="fa-solid fa-star text-emerald"></i> Improved firmware testing and flashing validation processes through structured communication analysis.<br>
-                                <i class="fa-solid fa-star text-emerald"></i> Consistently delivered robust and stable applications within committed timelines.
-                            </p>
+                    
+                    <!-- Right Side: Diagnostics & Performance Metrics Dashboard -->
+                    <div class="experience-metrics-panel">
+                        <h3 class="dashboard-title"><i class="fa-solid fa-chart-line"></i> Diagnostics Performance Logs</h3>
+                        
+                        <!-- System Status Widget -->
+                        <div class="glass-card status-widget">
+                            <div class="status-widget-header">
+                                <span class="status-indicator-tag green"><i class="fa-solid fa-circle-notch fa-spin"></i> SYSTEM RUNNING</span>
+                                <span class="status-title">VCI MONITOR</span>
+                            </div>
+                            <div class="status-widget-body">
+                                <div class="terminal-mock-console">
+                                    <div class="console-line text-cyan">[INIT] Connected to VCI through BLE medium.</div>
+                                    <div class="console-line text-emerald">[OK] Diagnostic Protocol selected: UDS (ISO 14229) over CAN.</div>
+                                    <div class="console-line">[RUN] Initiating address-based ECU flashing sequence.</div>
+                                    <div class="console-line text-yellow">[WARN] Low latency response. Optimizing packet size.</div>
+                                    <div class="console-line text-emerald">[OK] 5+ OEM ECUs successfully flashed. 100% stable.</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Metrics Counter Grid -->
+                        <div class="metrics-counters-grid">
+                            <div class="glass-card metric-counter-card">
+                                <div class="metric-value">3+ <span class="metric-unit">Years</span></div>
+                                <div class="metric-label">Professional Experience</div>
+                                <i class="fa-solid fa-briefcase metric-icon"></i>
+                            </div>
+                            
+                            <div class="glass-card metric-counter-card">
+                                <div class="metric-value">8+ <span class="metric-unit">Brands</span></div>
+                                <div class="metric-label">ECUs Integrated</div>
+                                <i class="fa-solid fa-microchip metric-icon"></i>
+                            </div>
+                            
+                            <div class="glass-card metric-counter-card">
+                                <div class="metric-value">7+ <span class="metric-unit">Apps</span></div>
+                                <div class="metric-label">TVS & BMW Live Apps</div>
+                                <i class="fa-solid fa-mobile-screen metric-icon"></i>
+                            </div>
+                            
+                            <div class="glass-card metric-counter-card">
+                                <div class="metric-value">100%</div>
+                                <div class="metric-label">Flashing Success Rate</div>
+                                <i class="fa-solid fa-bolt-lightning metric-icon"></i>
+                            </div>
                         </div>
 
-                        <h3 class="column-title"><i class="fas fa-graduation-cap"></i> Education</h3>
-
-                        <div class="glass-card timeline-card">
-                            <span class="timeline-date">2019 - 2023</span>
-                            <h4>B.E. Computer Science & Engineering</h4>
-                            <div class="timeline-school">
-                                <i class="fas fa-university text-cyan"></i> AVS Engineering College
+                        <!-- Protocol Coverage Panel -->
+                        <div class="glass-card protocol-coverage-widget">
+                            <h4><i class="fa-solid fa-sliders"></i> Diagnostic Protocols & Skills</h4>
+                            <div class="protocol-bar-container">
+                                <div class="protocol-header">
+                                    <span>UDS Protocol (ISO 14229)</span>
+                                    <span class="percentage">98%</span>
+                                </div>
+                                <div class="protocol-bar-bg">
+                                    <div class="protocol-bar-fill" style="width: 98%;"></div>
+                                </div>
                             </div>
-                            <div class="timeline-score">CGPA: 8.23</div>
-                            <p class="timeline-desc">
-                                Specialized in core computer science. Published a research paper on <strong>IoT-based Home Automation</strong>, integrating hardware and software.
-                            </p>
+                            
+                            <div class="protocol-bar-container">
+                                <div class="protocol-header">
+                                    <span>OBD-II Diagnostics</span>
+                                    <span class="percentage">95%</span>
+                                </div>
+                                <div class="protocol-bar-bg">
+                                    <div class="protocol-bar-fill" style="width: 95%;"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="protocol-bar-container">
+                                <div class="protocol-header">
+                                    <span>CAN Bus (Controller Area Network)</span>
+                                    <span class="percentage">90%</span>
+                                </div>
+                                <div class="protocol-bar-bg">
+                                    <div class="protocol-bar-fill" style="width: 90%;"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="protocol-bar-container">
+                                <div class="protocol-header">
+                                    <span>K-Line Communication Protocol</span>
+                                    <span class="percentage">75%</span>
+                                </div>
+                                <div class="protocol-bar-bg">
+                                    <div class="protocol-bar-fill" style="width: 75%;"></div>
+                                </div>
+                            </div>
                         </div>
 
-                        <div class="glass-card timeline-card">
-                            <span class="timeline-date">2019</span>
-                            <h4>HSC (12th Grade)</h4>
-                            <div class="timeline-school">
-                                <i class="fas fa-school"></i> Govt. Higher Secondary School, Vanavasi
+                        <!-- Production Achievements widget -->
+                        <div class="glass-card achievements-log-widget">
+                            <h4><i class="fa-solid fa-trophy"></i> Key Achievements & Impact</h4>
+                            <div class="achievement-logs">
+                                <div class="achievement-log-item">
+                                    <div class="log-indicator"><i class="fa-solid fa-circle text-emerald"></i></div>
+                                    <div class="log-text">Successfully built TVS eRIDEScan 2W application supporting next-gen EV controllers (BMS, MCU, iVCU, VCU, LCM).</div>
+                                </div>
+                                <div class="achievement-log-item">
+                                    <div class="log-indicator"><i class="fa-solid fa-circle text-emerald"></i></div>
+                                    <div class="log-text">Designed and implemented OBD2B EMS flashing sequence accessing multi-variant address-based flashing flows.</div>
+                                </div>
+                                <div class="achievement-log-item">
+                                    <div class="log-indicator"><i class="fa-solid fa-circle text-emerald"></i></div>
+                                    <div class="log-text">Implemented remote diagnostics, enabling real-time remote flashing and VCI over-the-air validation.</div>
+                                </div>
+                                <div class="achievement-log-item">
+                                    <div class="log-indicator"><i class="fa-solid fa-circle text-emerald"></i></div>
+                                    <div class="log-text">Achieved robust firmware testing validation via PCAN-Viewer and hardware analyzer flows.</div>
+                                </div>
                             </div>
-                            <div class="timeline-score">Percentage: 69.83%</div>
                         </div>
                     </div>
                 </div>

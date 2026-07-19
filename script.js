@@ -1286,5 +1286,31 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 200);
     }
 
+    // ==========================================
+    // 6. ROLE TABS IN EXPERIENCE TIMELINE
+    // ==========================================
+    const roleTabs = document.querySelectorAll('.role-tab');
+    roleTabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+            const roleCard = tab.closest('.timeline-card');
+            if (!roleCard) return;
+
+            // Remove active from all tabs in this card
+            roleCard.querySelectorAll('.role-tab').forEach(t => t.classList.remove('active'));
+            // Remove active from all tab contents in this card
+            roleCard.querySelectorAll('.role-tab-content').forEach(c => c.classList.remove('active'));
+
+            // Add active to this tab
+            tab.classList.add('active');
+            
+            // Add active to targeted content
+            const targetTabName = tab.getAttribute('data-role-tab');
+            const targetContent = roleCard.querySelector(`#role-${targetTabName}`);
+            if (targetContent) {
+                targetContent.classList.add('active');
+            }
+        });
+    });
+
     initShowcaseAnimations();
 });
