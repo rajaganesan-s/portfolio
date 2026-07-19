@@ -1410,4 +1410,43 @@ document.addEventListener('DOMContentLoaded', () => {
             heroContent.style.opacity = 1 - scrolled * 0.002;
         }
     });
+
+    // ==========================================
+    // 10. 3D CARD TILT & GLINT INTERACTION
+    // ==========================================
+    const tiltElements = document.querySelectorAll('.bento-item, .skill-card');
+    
+    tiltElements.forEach(card => {
+        card.addEventListener('mousemove', (e) => {
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left; // cursor x relative to card
+            const y = e.clientY - rect.top;  // cursor y relative to card
+            
+            const centerX = rect.width / 2;
+            const centerY = rect.height / 2;
+            
+            // Subtle rotation angles (max 6 degrees to avoid warping content)
+            const rotateX = ((centerY - y) / centerY) * 6;
+            const rotateY = ((x - centerX) / centerX) * 6;
+            
+            // Add a perspective transform and slight hover scaling (1.025x)
+            card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.025, 1.025, 1.025)`;
+            
+            // Custom radial light spotlight that tracks cursor coordinate
+            const glintX = (x / rect.width) * 100;
+            const glintY = (y / rect.height) * 100;
+            card.style.backgroundImage = `radial-gradient(circle at ${glintX}% ${glintY}%, rgba(0, 242, 254, 0.15) 0%, rgba(11, 11, 24, 0.95) 75%)`;
+        });
+        
+        card.addEventListener('mouseleave', () => {
+            // Smoothly ease card back to default coordinates
+            card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)';
+            card.style.backgroundImage = '';
+            card.style.transition = 'transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), background-image 0.6s ease';
+        });
+        
+        card.addEventListener('mouseenter', () => {
+            card.style.transition = 'none'; // Instant response when mouse enters
+        });
+    });
 });
