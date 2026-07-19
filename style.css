@@ -3976,7 +3976,9 @@ ul {
     padding: 30px;
     overflow-y: auto;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
     background: #04040a;
 }
 
@@ -4408,9 +4410,41 @@ ul {
    PRINT STYLING (FOR NATIVE PDF GENERATION)
    ========================================================================== */
 @media print {
-    /* Hide all main browser/website containers */
-    body * {
-        visibility: hidden;
+    @page {
+        margin: 0; /* Hides browser default header (title, date) and footer (URL, page number) completely */
+    }
+
+    /* Hide all main website containers from print layout */
+    body > *:not(#resumeModal) {
+        display: none !important;
+    }
+
+    /* Hide modal overlay, header, and controls from print layout */
+    .resume-modal-overlay,
+    .resume-modal-header,
+    .resume-controls {
+        display: none !important;
+    }
+
+    /* Reset layout wrapper of the modal to let document flow naturally */
+    #resumeModal,
+    .resume-modal-container,
+    .resume-modal-body,
+    .resume-sheet-wrapper {
+        position: static !important;
+        display: block !important;
+        width: 100% !important;
+        height: auto !important;
+        min-height: unset !important;
+        max-width: 100% !important;
+        background: none !important;
+        border: none !important;
+        box-shadow: none !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        overflow: visible !important;
+        transform: none !important;
+        opacity: 1 !important;
     }
 
     /* Set up clean print viewport options */
@@ -4418,30 +4452,27 @@ ul {
         background: #ffffff !important;
         color: #000000 !important;
         width: 100% !important;
-        height: 100% !important;
+        height: auto !important;
         overflow: visible !important;
-        font-size: 10pt !important; /* Fixed pt size for consistent layout prints */
+        font-size: 10pt !important;
     }
 
-    /* Force show the printable resume sheet */
-    #resumeSheet, #resumeSheet * {
-        visibility: visible !important;
-    }
-
-    /* Position the sheet precisely at the origin of the page */
-    #resumeSheet {
-        position: absolute !important;
-        left: 0 !important;
-        top: 0 !important;
+    /* Format each page sheet */
+    .resume-sheet {
+        page-break-after: always;
+        page-break-inside: avoid;
+        position: relative !important;
         width: 100% !important;
         max-width: 100% !important;
         min-height: unset !important;
         margin: 0 !important;
-        padding: 0 !important;
+        padding: 1.2cm 1.5cm !important; /* Re-adds padding for printable text margins on every page */
         box-shadow: none !important;
         border: none !important;
         background: #ffffff !important;
         color: #000000 !important;
+        display: block !important;
+        overflow: visible !important;
     }
 
     /* Print-specific layout enhancements */
@@ -4508,16 +4539,8 @@ ul {
         page-break-inside: avoid;
     }
 
-    /* Append actual URLs to anchors in print layout */
+    /* Hide URLs for anchors in print layout */
     .resume-sheet a:after {
-        content: " (" attr(href) ")" !important;
-        font-size: 8pt !important;
-        color: #333333 !important;
-    }
-
-    /* Hide URLs for anchors that are javascript-void or trigger links */
-    .resume-sheet a[href^="javascript:"]:after,
-    .resume-sheet a[href^="#"]:after {
         content: "" !important;
     }
 }
