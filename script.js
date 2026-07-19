@@ -1133,14 +1133,27 @@ document.addEventListener('DOMContentLoaded', () => {
     if (contactForm) {
         contactForm.addEventListener('submit', (e) => {
             e.preventDefault();
+            
+            const name = document.getElementById('form-name').value;
+            const email = document.getElementById('form-email').value;
+            const message = document.getElementById('form-message').value;
+
+            const recipient = 'rajaganesansubramani@gmail.com';
+            const subject = encodeURIComponent(`Portfolio Contact Form - ${name}`);
+            const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`);
+            const mailtoUrl = `mailto:${recipient}?subject=${subject}&body=${body}`;
+
             const btn = contactForm.querySelector('button');
             const originalHtml = btn.innerHTML;
 
-            btn.innerHTML = '<span>Sending Frame...</span> <i class="fa-solid fa-spinner fa-spin"></i>';
+            btn.innerHTML = '<span>Opening Mail Client...</span> <i class="fa-solid fa-spinner fa-spin"></i>';
             btn.disabled = true;
 
+            // Trigger local mail client launch
+            window.location.href = mailtoUrl;
+
             setTimeout(() => {
-                btn.innerHTML = '<span>Message Sent (Rx $7F Positive)</span> <i class="fa-solid fa-circle-check"></i>';
+                btn.innerHTML = '<span>Mail Client Opened</span> <i class="fa-solid fa-envelope-open"></i>';
                 btn.style.background = '#10b981';
                 btn.style.color = '#fff';
                 contactForm.reset();
@@ -1151,7 +1164,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     btn.style.background = '';
                     btn.style.color = '';
                 }, 3000);
-            }, 1500);
+            }, 1200);
         });
     }
 

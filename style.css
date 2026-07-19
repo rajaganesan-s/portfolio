@@ -4503,9 +4503,34 @@ ul {
 
     /* Print-specific layout enhancements */
     .resume-header {
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: space-between !important;
+        align-items: flex-start !important;
+        gap: 20px !important;
         border-bottom: 2px solid #000000 !important;
         padding-bottom: 12px !important;
         margin-bottom: 15px !important;
+    }
+
+    .resume-title-group {
+        flex: 1 !important;
+    }
+
+    .resume-contact-info {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 4px !important;
+        font-size: 8pt !important;
+        text-align: right !important;
+        min-width: 240px !important;
+    }
+
+    .contact-item {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: flex-end !important;
+        gap: 6px !important;
     }
 
     .resume-name {
