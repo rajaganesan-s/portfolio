@@ -1364,4 +1364,50 @@ document.addEventListener('DOMContentLoaded', () => {
             window.print();
         });
     }
+
+    // ==========================================
+    // 8. SCROLL REVEAL (INTERSECTION OBSERVER) SYSTEM
+    // ==========================================
+    const revealElements = document.querySelectorAll('.bento-item, .skill-card, .project-row, .section-title, .contact-wrapper');
+    
+    if ('IntersectionObserver' in window) {
+        const revealObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('reveal-active');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            root: null,
+            threshold: 0.12,
+            rootMargin: '0px 0px -40px 0px'
+        });
+        
+        revealElements.forEach(el => {
+            el.classList.add('reveal-ready');
+            revealObserver.observe(el);
+        });
+    } else {
+        // Fallback for browsers that don't support IntersectionObserver
+        revealElements.forEach(el => {
+            el.classList.add('reveal-active');
+        });
+    }
+
+    // ==========================================
+    // 9. PARALLAX EFFECTS ON SCROLL
+    // ==========================================
+    const heroVisual = document.querySelector('.hero-visual');
+    const heroContent = document.querySelector('.hero-content');
+    window.addEventListener('scroll', () => {
+        const scrolled = window.pageYOffset;
+        if (heroVisual) {
+            heroVisual.style.transform = `translateY(${scrolled * 0.1}px)`;
+        }
+        if (heroContent) {
+            heroContent.style.transform = `translateY(${scrolled * 0.05}px)`;
+            heroContent.style.opacity = 1 - scrolled * 0.002;
+        }
+    });
 });
