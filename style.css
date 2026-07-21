@@ -147,6 +147,7 @@ ul {
 .text-emerald { color: var(--secondary); }
 .text-rose { color: var(--accent); }
 .text-purple { color: #c084fc; }
+.text-amber { color: #f59e0b; }
 
 .pt-10 { padding-top: 10px; }
 .pt-20 { padding-top: 20px; }
@@ -1437,6 +1438,10 @@ ul {
 
 .gradient-3 {
     background: linear-gradient(135deg, #4c0519, #881337);
+}
+
+.gradient-4 {
+    background: linear-gradient(135deg, #1e1b4b, #3730a3);
 }
 
 .visual-overlay {

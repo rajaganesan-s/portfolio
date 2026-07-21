@@ -147,7 +147,8 @@ document.addEventListener('DOMContentLoaded', () => {
             "a Vehicle Diagnostics Specialist (UDS & OBD-II)",
             "an Android & Kotlin Specialist",
             "a Flutter Cross-Platform Developer",
-            "an ECU Flashing & Diagnostics Engineer"
+            "an ECU Flashing & Diagnostics Engineer",
+            "an IoT & Published Research Author"
         ];
         let wordIndex = 0;
         let charIndex = 0;
