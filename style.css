@@ -1747,27 +1747,38 @@ ul {
 }
 
 @media (max-width: 992px) {
+    .hero-section {
+        min-height: auto;
+        padding-top: calc(var(--nav-height) + 24px);
+        padding-bottom: 40px;
+    }
+
     .hero-container {
         grid-template-columns: 1fr;
         text-align: center;
+        gap: 30px;
     }
 
     .hero-content {
-        order: 2;
+        order: 1 !important;
         display: flex;
         flex-direction: column;
         align-items: center;
+        width: 100%;
+        opacity: 1 !important;
+        transform: none !important;
     }
 
     .hero-visual {
-        order: 1;
+        order: 2 !important;
         max-width: 100%;
         width: 100%;
-        margin: 0 auto 20px;
+        margin: 24px auto 0;
+        transform: none !important;
     }
 
     .profile-card-tilt {
-        transform: none;
+        transform: none !important;
         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
         width: 100%;
         max-width: 100%;
@@ -1821,7 +1832,45 @@ ul {
     }
 
     .hero-name {
-        font-size: 3.2rem;
+        font-size: 2.7rem;
+        line-height: 1.1;
+        letter-spacing: -1px;
+        word-break: break-word;
+    }
+
+    .greeting {
+        font-size: 0.8rem;
+        flex-wrap: wrap;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .typing-container {
+        font-size: 1.05rem;
+        justify-content: center;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .hero-description {
+        font-size: 0.95rem;
+        line-height: 1.6;
+        padding: 0 5px;
+        margin-bottom: 25px;
+        text-align: center;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 12px;
+        width: 100%;
+    }
+
+    .hero-buttons .btn {
+        width: 100%;
+        max-width: 280px;
+        justify-content: center;
     }
 
     .telemetry-grid {
@@ -1833,6 +1882,21 @@ ul {
         width: 80px;
         height: 80px;
     }
+}
+
+@media (max-width: 480px) {
+    .hero-name {
+        font-size: 2.2rem;
+    }
+
+    .greeting {
+        font-size: 0.75rem;
+    }
+
+    .hero-buttons .btn {
+        max-width: 100%;
+    }
+}
 
     .dial-num {
         font-size: 0.85rem;

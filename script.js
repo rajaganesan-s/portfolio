@@ -1413,16 +1413,31 @@ document.addEventListener('DOMContentLoaded', () => {
     // ==========================================
     const heroVisual = document.querySelector('.hero-visual');
     const heroContent = document.querySelector('.hero-content');
-    window.addEventListener('scroll', () => {
-        const scrolled = window.pageYOffset;
-        if (heroVisual) {
-            heroVisual.style.transform = `translateY(${scrolled * 0.1}px)`;
+    
+    function handleHeroParallax() {
+        if (window.innerWidth > 992) {
+            const scrolled = window.pageYOffset;
+            if (heroVisual) {
+                heroVisual.style.transform = `translateY(${scrolled * 0.1}px)`;
+            }
+            if (heroContent) {
+                heroContent.style.transform = `translateY(${scrolled * 0.05}px)`;
+                heroContent.style.opacity = Math.max(0, 1 - scrolled * 0.001);
+            }
+        } else {
+            if (heroVisual) {
+                heroVisual.style.transform = 'none';
+            }
+            if (heroContent) {
+                heroContent.style.transform = 'none';
+                heroContent.style.opacity = '1';
+            }
         }
-        if (heroContent) {
-            heroContent.style.transform = `translateY(${scrolled * 0.05}px)`;
-            heroContent.style.opacity = 1 - scrolled * 0.002;
-        }
-    });
+    }
+
+    window.addEventListener('scroll', handleHeroParallax);
+    window.addEventListener('resize', handleHeroParallax);
+    handleHeroParallax();
 
     // ==========================================
     // 10. 3D CARD TILT & GLINT INTERACTION
